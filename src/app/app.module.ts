@@ -7,15 +7,19 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
+import { GroupesComponent } from './templates/pages/groupes/groupes.component';
+import { FormGroupeComponent } from './components/form-groupe/form-groupe.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { AjoutergroupeComponent } from './templates/pages/ajoutergroupe/ajoutergroupe.component';
 
 
 @NgModule({
-  declarations: [AppComponent,
-  
+  declarations: [AppComponent, GroupesComponent,FormGroupeComponent,AjoutergroupeComponent
+
   ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [
     StatusBar,
     SplashScreen,
@@ -23,4 +27,4 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
