@@ -16,8 +16,9 @@ export class FormGroupeComponent implements OnInit {
   ngOnInit() { }
 
   ajouter() {
-    this.groupeService.ajouter(this.gDto);
-
+    const obs = this.groupeService.ajouter(this.gDto);
+    obs.subscribe((result) => {
+      console.log(result);
+    });
   }
-
 }

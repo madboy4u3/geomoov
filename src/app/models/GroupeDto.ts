@@ -1,3 +1,4 @@
+// Transferer l'objet groupe entre Front & Back
 export class GroupeDto {
     // tslint:disable: variable-name
     private _titre: string;
