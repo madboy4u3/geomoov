@@ -18,9 +18,9 @@ export class GroupeService {
     }
 
     ajouter(data: GroupeDto) {
-        // Pas besoin de typer a utiliser le (let bippeur : Observable<TchatteurDtoInscription>)
-        let bippeur = this.http.post(this.URL, data);
-        bippeur.subscribe((reponse) => {
+        // Pas besoin de typer a utiliser le (let bippeurGroupeDto : Observable<GroupeDto>)
+        let bippeurGroupeDto = this.http.post(this.URL, data);
+        bippeurGroupeDto.subscribe((reponse) => {
             console.log(reponse);
         });
     }
