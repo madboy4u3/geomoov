@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GroupeDto } from 'src/app/models/GroupeDto';
+import { GroupeService } from 'src/app/services/GroupeService';
 
 @Component({
   selector: 'app-form-groupe',
@@ -8,14 +9,14 @@ import { GroupeDto } from 'src/app/models/GroupeDto';
 })
 export class FormGroupeComponent implements OnInit {
   gDto: GroupeDto;
-  constructor() {
+  constructor(private groupeService: GroupeService) {
     this.gDto = new GroupeDto();
   }
 
   ngOnInit() { }
 
   ajouter() {
-    console.log(this.gDto);
+    this.groupeService.ajouter(this.gDto);
 
   }
 

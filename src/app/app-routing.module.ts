@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { GroupesComponent } from './templates/pages/groupes/groupes.component';
-import { AjoutergroupeComponent } from './templates/pages/ajoutergroupe/ajoutergroupe.component';
+import { GroupesComponent } from './templates/pages/groupe/groupes/groupes.component';
+import { AjoutergroupeComponent } from './templates/pages/groupe/ajoutergroupe/ajoutergroupe.component';
 //import { AfficherComponent } from 'src/components/groupe/afficher/afficher.component';
 
 const routes: Routes = [
