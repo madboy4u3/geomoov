@@ -6,32 +6,22 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
     providedIn: 'root',
 })
-// C'est un Service pour ajouter un groupe dans la BDD
 export class GroupeService {
 
-    private URL = 'http://localhost:7001/api/groupe';
+    private URL: string = 'http://localhost:7001/api/groupe';
 
 
     // C'est comme un @Autowire dans le constructor
-    // avec le mot "private dans le constructeur" Frabrique le champs , l'ajoute  au constructeur
+    // avec le mot "private" Frabrique le champs , l'ajoute  au constructeur
     constructor(private http: HttpClient) {
 
     }
 
-    /**
-     * permet d'ajouter un groupe
-     * @param {GroupeDto} data c
-     */
     ajouter(data: GroupeDto) {
-        const result = this.http.post<GroupeDto>(this.URL + '/ajouter', data);
-        return result;
-    }
-
-    /**
-     * permet de récuperer la liste des groupes
-     */
-    recupererListeGroupes() {
-        const result = this.http.get<Array<GroupeDto>>(this.URL);
-        return result;
+        // Pas besoin de typer a utiliser le (let bippeurGroupeDto : Observable<GroupeDto>)
+        let bippeurGroupeDto = this.http.post(this.URL, data);
+        bippeurGroupeDto.subscribe((reponse) => {
+            console.log(reponse);
+        });
     }
 }
