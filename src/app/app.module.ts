@@ -14,9 +14,13 @@ import { FormsModule } from '@angular/forms';
 import { AjoutergroupeComponent } from './templates/pages/groupe/ajoutergroupe/ajoutergroupe.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from './helpers/MessageService';
+import { MenuComponent } from './templates/layouts/menu/menu.component';
+import { ProtegesComponent } from './templates/pages/proteges/proteges.component';
+import { FormProtegeComponent } from './components/form-protege/form-protege.component';
 
 @NgModule({
-  declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent
+  declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
+    FormProtegeComponent
 
   ],
   entryComponents: [],
