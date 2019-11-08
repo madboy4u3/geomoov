@@ -14,10 +14,13 @@ import { FormsModule } from '@angular/forms';
 import { AjoutergroupeComponent } from './templates/pages/groupe/ajoutergroupe/ajoutergroupe.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from './helpers/MessageService';
+import { FormParcoursComponent } from './components/form-parcours/form-parcours.component';
+import { AjouterParcoursComponent } from './templates/pages/mesparcours/ajouter-parcours/ajouter-parcours.component';
+import { ParcoursComponent } from './templates/pages/mesparcours/parcours/parcours.component';
 
 @NgModule({
-  declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent
-
+  declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, FormParcoursComponent,
+     AjouterParcoursComponent, ParcoursComponent
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule],
