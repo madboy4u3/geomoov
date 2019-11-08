@@ -7,7 +7,8 @@ import { AjoutergroupeComponent } from './templates/pages/groupe/ajoutergroupe/a
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./templates/pages/home/home.module').then(m => m.HomePageModule) },
-  { path: 'groupe', component: GroupesComponent,
+  {
+    path: 'groupes', component: GroupesComponent,
     children: [
       {
         path: 'ajouter', component: AjoutergroupeComponent

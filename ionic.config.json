@@ -1,5 +1,7 @@
 {
   "name": "geomoov",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
