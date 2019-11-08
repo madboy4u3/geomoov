@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AjoutergroupeComponent } from './templates/pages/groupe/ajoutergroupe/ajoutergroupe.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MessageService } from './helpers/MessageService';
 
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent
@@ -22,7 +23,6 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule],
   providers: [
     StatusBar,
-
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

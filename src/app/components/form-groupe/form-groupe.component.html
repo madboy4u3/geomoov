@@ -1,24 +1,24 @@
 <h3>Formulaire : Ajouter un groupe</h3>
-<form (ngSubmit)="ajouter()">
-  <ion-item>
-  <label for="field-titre">Titre du groupe :</label>
-  <ion-input type="text" id="field-titre" name="groupe.nom" [(ngModel)]="gDto.titre"></ion-input>
-  </ion-item>
-  <ion-item>
-  <label for="field-description">Description :</label>
-  <ion-input type="text-area" id="field-description" name="groupe.description" [(ngModel)]="gDto.description"></ion-input>
-  </ion-item>
-  <ion-grid>
-    <ion-row>
-        <ion-col>
-            <ion-button expand="block" size="large" type="submit" color="success" >Créer</ion-button>
-        </ion-col>
-        <ion-col>
-            <ion-button expand="block" size="large" type="reset" (click)="onReset()" color="success" >Annuler</ion-button>
-        </ion-col>
-    </ion-row>
-</ion-grid>
+<form action="/groupes" (ngSubmit)="ajouter()">
+    <ion-item>
+        <label for="field-titre">Titre du groupe :</label>
+        <ion-input type="text" id="field-titre" name="groupe.nom" [(ngModel)]="gDto.titre"></ion-input>
+    </ion-item>
+    <ion-item>
+        <label for="field-description">Description :</label>
+        <ion-input type="text-area" id="field-description" name="groupe.description" [(ngModel)]="gDto.description">
+        </ion-input>
+    </ion-item>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-button expand="block" size="large" type="submit" color="success">Créer</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button expand="block" size="large" type="reset" (click)="onReset()" color="success">Annuler
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
 </form>
-
-
