@@ -2,13 +2,10 @@ export class ParcoursDto {
     // tslint:disable: variable-name
     private _nom: string;
     private _description: string;
-    private _addresseDepart: string;
+    private _adresseDepart: string;
     private _adresseArrivee: string;
 
-    constructor() {
-
-    }
-
+    constructor() { }
 
     public get nom(): string {
         return this._nom;
@@ -25,16 +22,16 @@ export class ParcoursDto {
     }
 
     public get adresseDepart(): string {
-        return this._addresseDepart;
+        return this._adresseDepart;
     }
     public set adresseDepart(value: string) {
-        this._addresseDepart = value;
+        this._adresseDepart = value;
     }
 
-    public get addresseArrivee(): string {
+    public get adresseArrivee(): string {
         return this._adresseArrivee;
     }
-    public set addresseArrivee (value: string) {
+    public set adresseArrivee(value: string) {
         this._adresseArrivee = value;
     }
 }

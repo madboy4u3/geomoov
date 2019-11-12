@@ -20,6 +20,4 @@ export class GroupeDto {
     public set titre(value: string) {
         this._titre = value;
     }
-
-
 }

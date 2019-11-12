@@ -24,7 +24,7 @@ export class GroupesComponent implements OnInit, OnDestroy {
       this.listeGroupes.push(groupe);
     });
 
-    let obs = this.groupeService.recupererListeGroupes();
+    const obs = this.groupeService.recupererListeGroupes();
     obs.subscribe(resp => this.listeGroupes = resp);
   }
 

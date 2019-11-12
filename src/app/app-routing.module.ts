@@ -18,7 +18,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'parcours', component: ParcoursComponent,
+    path: 'api/parcours', component: ParcoursComponent,
     children: [
       {
         path: 'ajouter', component: AjouterParcoursComponent

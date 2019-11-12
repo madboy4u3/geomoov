@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 // C'est un Service pour ajouter un groupe dans la BDD
 export class GroupeService {
-    private URL = 'http://localhost:8100/api/groupe';
+    private URL = 'http://localhost:7001/api/groupe';
 
     // C'est comme un @Autowire dans le constructor
     // avec le mot "private dans le constructeur" Frabrique le champs , l'ajoute  au constructeur
