@@ -17,10 +17,13 @@ import { MessageService } from './helpers/MessageService';
 import { MenuComponent } from './templates/layouts/menu/menu.component';
 import { ProtegesComponent } from './templates/pages/proteges/proteges.component';
 import { FormProtegeComponent } from './components/form-protege/form-protege.component';
+import { FormParcoursComponent } from './components/form-parcours/form-parcours.component';
+import { AjouterParcoursComponent } from './templates/pages/mesparcours/ajouter-parcours/ajouter-parcours.component';
+import { ParcoursComponent } from './templates/pages/mesparcours/parcours/parcours.component';
 
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
-    FormProtegeComponent
+    FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent
 
   ],
   entryComponents: [],

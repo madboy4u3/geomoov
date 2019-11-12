@@ -1,0 +1,35 @@
+<h3> Ajouter un parcours</h3>
+<form action="/parcours" (ngSubmit)="ajouterParcours()">
+    <ion-item>
+        <label for="field-titre">nom :</label>
+        <ion-input type="text" id="field-titre" name="parcours.nom" [(ngModel)]="parcoursDto.titre"></ion-input>
+    </ion-item>
+    <ion-item>
+        <label for="field-description">Description :</label>
+        <ion-input type="text-area" id="field-description" name="parcours.description" [(ngModel)]="parcoursDto.description">
+        </ion-input>
+
+        <ion-item>
+            <label for="field-adresseDepart">Adresse de départ :</label>
+            <ion-input type="text-area" id="field-adresseDepart" name="parcours.adresseDepart"
+                [(ngModel)]="parcoursDto.adresseDepart">
+            </ion-input>
+            <ion-item>
+                <label for="field-adresseArrivee">Adresse d'arrivée :</label>
+                <ion-input type="text-area" id="field-adresseArrivee" name="parcours.adresseArrivee"
+                    [(ngModel)]="parcoursDto.adresseArrivee">
+                </ion-input>
+            </ion-item>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-button expand="block" size="large" type="submit" color="success">Ajouter</ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button expand="block" size="large" type="reset" (click)="onReset()" color="success">Annuler
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+</form>

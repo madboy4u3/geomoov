@@ -1,13 +1,13 @@
 
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ParcourDto } from '../models/ParcourDto';
 import { Observable } from 'rxjs';
+import { ParcoursDto } from '../models/ParcoursDto';
 @Injectable({
     providedIn: 'root',
 })
 export class ParcoursService {
-    private URL = 'http://localhost:8101/';
+    private URL = 'http://localhost:8101/api/parcours';
 
     // C'est comme un @Autowire dans le constructor
     // avec le mot "private dans le constructeur" Frabrique le champs , l'ajoute  au constructeur
@@ -18,16 +18,16 @@ export class ParcoursService {
      * permet d'ajouter un parcours
      * @param data ParcoursDto
      */
-    ajouter(data: ParcourDto) {
-        const result = this.http.post<ParcourDto>(this.URL + '/ajouter', data);
+    ajouter(data: ParcoursDto) {
+        const result = this.http.post<ParcoursDto>(this.URL + '/ajouter', data);
         return result;
     }
 
     /**
      * permet de récuperer la liste des parcours
      */
-    recupererListeParcours(): Observable<ParcourDto[]> {
-        const result = this.http.get<Array<ParcourDto>>(this.URL);
+    recupererListeParcours(): Observable<ParcoursDto[]> {
+        const result = this.http.get<Array<ParcoursDto>>(this.URL);
         return result;
     }
 
@@ -35,7 +35,7 @@ export class ParcoursService {
      *
      * @param parcours ParcoursDto
      */
-    modifier(parcours: ParcourDto) { }
+    modifier(parcours: ParcoursDto) { }
 
     /**
      * Supprimer un parcours

@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { Geolocation } from '@ionic-native/geolocation';
 
-import { HomePage } from './home.page';
+
 
 @NgModule({
   imports: [
@@ -16,11 +16,11 @@ import { HomePage } from './home.page';
     RouterModule.forChild([
       {
         path: '',
-        component: HomePage
+        component: HomePageModule
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePageModule]
 })
 export class HomePageModule {
 
