@@ -7,7 +7,7 @@ import { ParcoursDto } from '../models/ParcoursDto';
     providedIn: 'root',
 })
 export class ParcoursService {
-    private URL = 'http://localhost:8101/api/parcours';
+    private URL = 'http://localhost:8100/api/parcours';
 
     // C'est comme un @Autowire dans le constructor
     // avec le mot "private dans le constructeur" Frabrique le champs , l'ajoute  au constructeur
@@ -41,6 +41,5 @@ export class ParcoursService {
      * Supprimer un parcours
      * @param id number
      */
-    supprimer(id: number) { }
-
+    supprimer(id: number) {}
 }
