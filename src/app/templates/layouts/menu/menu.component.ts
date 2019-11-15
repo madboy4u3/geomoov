@@ -16,7 +16,7 @@ export class MenuComponent implements OnInit {
     },
     {
       title: 'Mes protégés',
-      url: '/proteges',
+      url: 'proteges',
       icon: 'people',
     },
     {
@@ -26,7 +26,7 @@ export class MenuComponent implements OnInit {
     },
     {
       title: 'Mes parcours',
-      url: '/parcours',
+      url: '/api/parcours',
       icon: 'pin',
     },
     {
