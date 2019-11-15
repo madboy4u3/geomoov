@@ -3,8 +3,6 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { GroupesComponent } from './templates/pages/groupe/groupes/groupes.component';
 import { AjoutergroupeComponent } from './templates/pages/groupe/ajoutergroupe/ajoutergroupe.component';
 import { ProtegesComponent } from './templates/pages/proteges/proteges.component';
-import { ParcoursComponent } from './templates/pages/mesparcours/parcours/parcours.component';
-import { AjouterParcoursComponent } from './templates/pages/mesparcours/ajouter-parcours/ajouter-parcours.component';
 import { HomePage } from './templates/pages/home/home.page';
 
 const routes: Routes = [
@@ -15,14 +13,6 @@ const routes: Routes = [
     children: [
       {
         path: 'ajouter', component: AjoutergroupeComponent
-      }
-    ]
-  },
-  {
-    path: 'api/parcours', component: ParcoursComponent,
-    children: [
-      {
-        path: 'ajouter', component: AjouterParcoursComponent
       }
     ]
   },

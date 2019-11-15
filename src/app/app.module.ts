@@ -23,14 +23,15 @@ import { AjouterParcoursComponent } from './templates/pages/mesparcours/ajouter-
 import { ParcoursComponent } from './templates/pages/mesparcours/parcours/parcours.component';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 import { HomePage } from './templates/pages/home/home.page';
+import { HomePageModule } from './templates/pages/home/home.module';
 
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
-    FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, HomePage
+    FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent
 
   ],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule],
+  entryComponents: [HomePage],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule, HomePageModule],
   providers: [
     Geolocation,
     StatusBar,
