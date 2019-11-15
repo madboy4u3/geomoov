@@ -14,6 +14,8 @@ export class GroupesComponent implements OnInit, OnDestroy {
   private listeGroupes: Array<GroupeDto>;
   private subscription: any;
   private queueMessages: Observable<any>;
+  private _isShow: boolean;
+
 
   constructor(private groupeService: GroupeService, private messageService: MessageService) { }
 
@@ -25,7 +27,9 @@ export class GroupesComponent implements OnInit, OnDestroy {
     });
 
     const obs = this.groupeService.recupererListeGroupes();
-    obs.subscribe(resp => this.listeGroupes = resp);
+    obs.subscribe(resp => {
+      this.listeGroupes = resp;
+    });
   }
 
   ngOnDestroy() {
@@ -34,4 +38,15 @@ export class GroupesComponent implements OnInit, OnDestroy {
     }
   }
 
+  public get isShow(): boolean {
+    return this._isShow;
+  }
+  public set isShow(value: boolean) {
+    this._isShow = value;
+  }
+
+  show() {
+    console.log(this._isShow);
+    this._isShow = !this._isShow;
+  }
 }

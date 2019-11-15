@@ -1,9 +1,38 @@
 <div>
-    <h1>Groupes :</h1>
+    <app-form-groupe *ngIf="_isShow"></app-form-groupe>
 
-    <app-form-groupe></app-form-groupe>
+    <!-- <ion-header> -->
+    <ion-toolbar color="primary">
+        <div>
+            <ion-title>Mes groupes</ion-title>
+            <ion-buttons slot="end">
+                <ion-button [routerLink]="['./ajouter']" (click)="show()">
+                    <ion-icon slot="icon-only" name="add"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </div>
+    </ion-toolbar>
+    <!-- </ion-header> -->
+    <!-- <ion-content padding> -->
+    <div>
+        <ion-list>
+            <ion-item *ngFor="let valeur of listeGroupes">
+                <ion-label>
+                    {{valeur._titre}}
+                </ion-label>
+                <ion-buttons slot="end">
+                    <ion-button [routerLink]="['./ajouter']" (click)="show()">
+                        <ion-icon slot="icon-only" name="add"></ion-icon>
+                    </ion-button>
+                    <ion-button [routerLink]="['./']">
+                        <ion-icon slot="icon-only" name="create"></ion-icon>
+                    </ion-button>
+                    <ion-button [routerLink]="['./']">
+                        <ion-icon slot="icon-only" name="close"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
 
-    <ul>
-        <li *ngFor="let valeur of listeGroupes">{{valeur._titre}}</li>
-    </ul>
-</div>
+            </ion-item>
+        </ion-list>
+    </div>
+    <!-- </ion-content> -->

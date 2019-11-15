@@ -26,7 +26,7 @@ export class MenuComponent implements OnInit {
     },
     {
       title: 'Mes parcours',
-      url: '/api/parcours',
+      url: '/parcours',
       icon: 'pin',
     },
     {

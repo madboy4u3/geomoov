@@ -4,6 +4,7 @@ import { GroupesComponent } from './templates/pages/groupe/groupes/groupes.compo
 import { AjoutergroupeComponent } from './templates/pages/groupe/ajoutergroupe/ajoutergroupe.component';
 import { ProtegesComponent } from './templates/pages/proteges/proteges.component';
 import { HomePage } from './templates/pages/home/home.page';
+import { ParcoursComponent } from './templates/pages/mesparcours/parcours/parcours.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes: Routes = [
     ]
   },
   { path: 'proteges', component: ProtegesComponent },
-  { path: 'pickup-location', loadChildren: './templates/pages/pickup-location/pickup-location.module#PickupLocationPageModule' }
+  { path: 'pickup-location', loadChildren: './templates/pages/pickup-location/pickup-location.module#PickupLocationPageModule' },
+  { path: 'parcours', component: ParcoursComponent },
 
 ];
 
