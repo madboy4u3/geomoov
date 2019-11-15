@@ -44,4 +44,5 @@ export class GroupeService {
      * @param id number
      */
     suprimer(id: number) { }
+
 }

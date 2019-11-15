@@ -1,0 +1,24 @@
+<h3> Ajouter une zone à ne pas dépasser</h3>
+<form action="/zones" (ngSubmit)="ajouter()">
+    <ion-item>
+        <label for="field-description">Description :</label>
+        <ion-input type="text" id="field-description" name="zone.description" [(ngModel)]="zoneDto.description"></ion-input>
+    </ion-item>
+    <ion-item>
+        <label for="field-parcours">Nom du parcours associé :</label>
+        <ion-input type="text-area" id="field-parcours" name="zone.parcours" [(ngModel)]="zoneDto.parcours">
+        </ion-input>
+    </ion-item>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-button expand="block" size="large" type="submit" color="success">Ajouter</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button expand="block" size="large" type="reset" (click)="onReset()" color="success">Annuler
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</form>
