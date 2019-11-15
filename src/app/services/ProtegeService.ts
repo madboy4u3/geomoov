@@ -17,7 +17,7 @@ export class ProtegeService {
     }
 
     /**
-     * permet d'ajouter un groupe
+     * permet d'ajouter un protege
      * @param data ProtegeDto
      */
     ajouter(data: ProtegeDto) {
