@@ -42,6 +42,7 @@ export class MenuComponent implements OnInit {
 
   ];
   route: string;
+  title: string;
   constructor(location: Location, router: Router) {
     router.events.subscribe(val => {
       if (location.path() !== '') {
@@ -49,7 +50,9 @@ export class MenuComponent implements OnInit {
       } else {
         this.route = 'Accueil';
       }
+      this.title = this.route.replace('/', '');
     });
+
   }
 
   ngOnInit() { }

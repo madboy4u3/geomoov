@@ -5,10 +5,11 @@ import { AjoutergroupeComponent } from './templates/pages/groupe/ajoutergroupe/a
 import { ProtegesComponent } from './templates/pages/proteges/proteges.component';
 import { ParcoursComponent } from './templates/pages/mesparcours/parcours/parcours.component';
 import { AjouterParcoursComponent } from './templates/pages/mesparcours/ajouter-parcours/ajouter-parcours.component';
+import { HomePage } from './templates/pages/home/home.page';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./templates/pages/home/home.module').then(m => m.HomePageModule) },
+  { path: 'home', component: HomePage },
   {
     path: 'groupes', component: GroupesComponent,
     children: [
@@ -25,7 +26,9 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'proteges', component: ProtegesComponent }
+  { path: 'proteges', component: ProtegesComponent },
+  { path: 'pickup-location', loadChildren: './templates/pages/pickup-location/pickup-location.module#PickupLocationPageModule' }
+
 ];
 
 @NgModule({

@@ -43,5 +43,5 @@ export class ParcoursService {
      * Supprimer un parcours
      * @param id number
      */
-    supprimer(id: number) {}
+    supprimer(id: number) { }
 }

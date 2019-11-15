@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { Geolocation } from '@ionic-native/geolocation';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+
 
 import { AppComponent } from './app.component';
 import { GroupesComponent } from './templates/pages/groupe/groupes/groupes.component';
@@ -20,18 +21,22 @@ import { FormProtegeComponent } from './components/form-protege/form-protege.com
 import { FormParcoursComponent } from './components/form-parcours/form-parcours.component';
 import { AjouterParcoursComponent } from './templates/pages/mesparcours/ajouter-parcours/ajouter-parcours.component';
 import { ParcoursComponent } from './templates/pages/mesparcours/parcours/parcours.component';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+import { HomePage } from './templates/pages/home/home.page';
 
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
-    FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent
+    FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, HomePage
 
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule],
   providers: [
+    Geolocation,
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    NativeGeocoder
   ],
   bootstrap: [AppComponent]
 })
