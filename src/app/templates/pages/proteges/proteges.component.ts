@@ -9,6 +9,6 @@ export class ProtegesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }

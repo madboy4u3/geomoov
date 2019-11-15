@@ -20,6 +20,9 @@ import { HomePage } from './home.page';
       }
     ])
   ],
+  exports: [CommonModule,
+    FormsModule,
+    IonicModule],
   declarations: [HomePage]
 })
 export class HomePageModule {

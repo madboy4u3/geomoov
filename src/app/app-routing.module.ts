@@ -15,7 +15,9 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'proteges', component: ProtegesComponent }
+  { path: 'proteges', component: ProtegesComponent },
+  { path: 'pickup-location', loadChildren: './templates/pages/pickup-location/pickup-location.module#PickupLocationPageModule' }
+
 ];
 
 @NgModule({
