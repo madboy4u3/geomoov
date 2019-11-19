@@ -20,7 +20,7 @@ export class GroupesComponent implements OnInit, OnDestroy {
   // tslint:disable-next-line: variable-name
   private _isShow = true;
   public searchTerm = '';
-  private liste: Array<string>;
+  private liste: Array<GroupeDto> = [];
 
   constructor(private groupeService: GroupeService,
     private messageService: MessageService,
@@ -40,6 +40,7 @@ export class GroupesComponent implements OnInit, OnDestroy {
     const obs = this.groupeService.recupererListeGroupes();
     obs.subscribe(resp => {
       this.listeGroupes = resp;
+      this.liste = resp;
       console.log(this.listeGroupes);
 
     });
@@ -64,10 +65,13 @@ export class GroupesComponent implements OnInit, OnDestroy {
 
   // Search Bar
   setFilteredItems() {
+    const savedlist = this.liste;
     if (this.searchTerm !== '') {
-      this._isShow = false;
+
       this.listeGroupes = this.searchBarService.filterItems(this.searchTerm, this.listeGroupes);
-    } else { this._isShow = true; }
+    } else if (this.listeGroupes.length === 0) {
+      this.listeGroupes = savedlist;
+    }
   }
 
   setSearchTerm(term) {

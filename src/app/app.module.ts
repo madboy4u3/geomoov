@@ -27,7 +27,6 @@ import { HomePage } from './templates/pages/home/home.page';
 import { HomePageModule } from './templates/pages/home/home.module';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AffichergroupeComponent } from './templates/pages/groupe/affichergroupe/affichergroupe.component';
-
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
     FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, AffichergroupeComponent
