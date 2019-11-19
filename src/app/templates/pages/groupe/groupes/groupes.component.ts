@@ -65,13 +65,9 @@ export class GroupesComponent implements OnInit, OnDestroy {
 
   // Search Bar
   setFilteredItems() {
-    const savedlist = this.liste;
-    if (this.searchTerm !== '') {
 
-      this.listeGroupes = this.searchBarService.filterItems(this.searchTerm, this.listeGroupes);
-    } else if (this.listeGroupes.length === 0) {
-      this.listeGroupes = savedlist;
-    }
+    this.listeGroupes = this.searchBarService.filterItems(this.searchTerm, this.liste);
+
   }
 
   setSearchTerm(term) {
