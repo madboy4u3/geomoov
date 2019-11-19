@@ -1,0 +1,32 @@
+<ion-toolbar color="primary">
+  <ion-title> {{groupe._titre | uppercase}} </ion-title>
+  <ion-buttons slot="end">
+    <ion-button [routerLink]="['./']">
+      <ion-icon size="small" slot="icon-only" name="create"></ion-icon>
+    </ion-button>
+    <ion-button [routerLink]="['./']">
+      <ion-icon size="small" slot="icon-only" name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+</ion-toolbar>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Protégé 1</ion-label>
+      <ion-button [routerLink]="['./']">
+        <ion-icon size="small" slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Protégé 2</ion-label>
+      <ion-button [routerLink]="['./']">
+        <ion-icon size="small" slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-button float-right color="primary" [routerLink]="['/groupe']">
+    <ion-icon slot="start" name="arrow-dropleft"></ion-icon>Retour
+  </ion-button>
+</ion-content>

@@ -7,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 
+
 import { AppComponent } from './app.component';
 import { GroupesComponent } from './templates/pages/groupe/groupes/groupes.component';
 import { FormGroupeComponent } from './components/form-groupe/form-groupe.component';
@@ -16,7 +17,7 @@ import { AjoutergroupeComponent } from './templates/pages/groupe/ajoutergroupe/a
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from './helpers/MessageService';
 import { MenuComponent } from './templates/layouts/menu/menu.component';
-import { ProtegesComponent } from './templates/pages/proteges/proteges.component';
+import { ProtegesComponent } from './templates/pages/protege/proteges/proteges.component';
 import { FormProtegeComponent } from './components/form-protege/form-protege.component';
 import { FormParcoursComponent } from './components/form-parcours/form-parcours.component';
 import { AjouterParcoursComponent } from './templates/pages/mesparcours/ajouter-parcours/ajouter-parcours.component';
@@ -24,10 +25,12 @@ import { ParcoursComponent } from './templates/pages/mesparcours/parcours/parcou
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 import { HomePage } from './templates/pages/home/home.page';
 import { HomePageModule } from './templates/pages/home/home.module';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AffichergroupeComponent } from './templates/pages/groupe/affichergroupe/affichergroupe.component';
 
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
-    FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent
+    FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, AffichergroupeComponent
 
   ],
   entryComponents: [HomePage],
@@ -37,7 +40,8 @@ import { HomePageModule } from './templates/pages/home/home.module';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    NativeGeocoder
+    NativeGeocoder,
+    AngularFirestore
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,7 @@
 import { GroupeDto } from '../models/GroupeDto';
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 // Equivalent de @Service de spring
 // On peut le mettre ici ou dans le app module dans les providers
 @Injectable({
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 // C'est un Service pour ajouter un groupe dans la BDD
 export class GroupeService {
-    private URL = 'http://localhost:7001/api/groupe';
+    private URL = 'http://192.168.1.124:7001/api/groupe';
 
     // C'est comme un @Autowire dans le constructor
     // avec le mot "private dans le constructeur" Frabrique le champs , l'ajoute  au constructeur
@@ -34,11 +34,21 @@ export class GroupeService {
     }
 
     /**
+    * permet de récuperer un groupe
+    */
+    recupererGroupes(id): Observable<GroupeDto> {
+        const result = this.http.get<GroupeDto>(this.URL + '/' + id);
+        return result;
+    }
+
+
+    /**
      *
      * @param groupe Group
      */
-    modifier(groupe: GroupeDto) { }
+    modifier(groupe: GroupeDto) {
 
+    }
     /**
      * Supprimer un Groupe
      * @param id number

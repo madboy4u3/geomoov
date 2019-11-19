@@ -3,6 +3,9 @@ import { GroupeDto } from 'src/app/models/GroupeDto';
 import { GroupeService } from 'src/app/services/GroupeService';
 import { MessageService } from 'src/app/helpers/MessageService';
 import { Observable } from 'rxjs';
+import { SearchBarService } from 'src/app/services/SearchBarService';
+import { NavController } from '@ionic/angular';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-groupes',
@@ -11,13 +14,21 @@ import { Observable } from 'rxjs';
 })
 export class GroupesComponent implements OnInit, OnDestroy {
   QUEUE_MESSAGES_KEY = 'formGroupe';
-  private listeGroupes: Array<GroupeDto>;
+  private listeGroupes: Array<GroupeDto> = [];
   private subscription: any;
   private queueMessages: Observable<any>;
-  private _isShow: boolean;
+  // tslint:disable-next-line: variable-name
+  private _isShow = true;
+  public searchTerm = '';
+  private liste: Array<string>;
 
+  constructor(private groupeService: GroupeService,
+    private messageService: MessageService,
+    private searchBarService: SearchBarService,
+    private navCtrl: NavController,
+    private route: Router) {
 
-  constructor(private groupeService: GroupeService, private messageService: MessageService) { }
+  }
 
   ngOnInit() {
     this.queueMessages = this.messageService.getMessagesQueues(this.QUEUE_MESSAGES_KEY);
@@ -29,7 +40,12 @@ export class GroupesComponent implements OnInit, OnDestroy {
     const obs = this.groupeService.recupererListeGroupes();
     obs.subscribe(resp => {
       this.listeGroupes = resp;
+      console.log(this.listeGroupes);
+
     });
+
+    this.setFilteredItems();
+
   }
 
   ngOnDestroy() {
@@ -38,15 +54,24 @@ export class GroupesComponent implements OnInit, OnDestroy {
     }
   }
 
-  public get isShow(): boolean {
-    return this._isShow;
-  }
-  public set isShow(value: boolean) {
-    this._isShow = value;
-  }
-
   show() {
     console.log(this._isShow);
     this._isShow = !this._isShow;
+    if (this._isShow === false) {
+      this.route.navigateByUrl('/groupe');
+    }
   }
+
+  // Search Bar
+  setFilteredItems() {
+    if (this.searchTerm !== '') {
+      this._isShow = false;
+      this.listeGroupes = this.searchBarService.filterItems(this.searchTerm, this.listeGroupes);
+    } else { this._isShow = true; }
+  }
+
+  setSearchTerm(term) {
+    this.searchTerm = term;
+  }
+
 }

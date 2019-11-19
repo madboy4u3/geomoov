@@ -7,6 +7,10 @@ import { Router } from '@angular/router';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
 })
+
+/**
+ * Création de menu
+ */
 export class MenuComponent implements OnInit {
   public appPages = [
     {
@@ -21,7 +25,7 @@ export class MenuComponent implements OnInit {
     },
     {
       title: 'Mes groupes',
-      url: '/groupes',
+      url: '/groupe',
       icon: 'contacts',
     },
     {

@@ -3,6 +3,8 @@ export class GroupeDto {
     // tslint:disable: variable-name
     private _titre: string;
     private _description: string;
+    private _veilleurId: number = 1;
+
 
     constructor() { }
 
@@ -19,5 +21,11 @@ export class GroupeDto {
     }
     public set titre(value: string) {
         this._titre = value;
+    }
+    public get veilleurId(): number {
+        return this._veilleurId;
+    }
+    public set veilleurId(value: number) {
+        this._veilleurId = value;
     }
 }
