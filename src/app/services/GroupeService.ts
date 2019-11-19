@@ -34,8 +34,9 @@ export class GroupeService {
     }
 
     /**
-    * permet de récuperer un groupe
-    */
+     * permet de récuperer un groupe
+     * @param id
+     */
     recupererGroupes(id): Observable<GroupeDto> {
         const result = this.http.get<GroupeDto>(this.URL + '/' + id);
         return result;

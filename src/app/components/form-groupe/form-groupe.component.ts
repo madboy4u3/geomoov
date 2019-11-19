@@ -14,6 +14,7 @@ import { Observable } from 'rxjs';
 export class FormGroupeComponent implements OnInit {
   QUEUE_MESSAGES_KEY = 'formGroupe';
   gDto: GroupeDto;
+  // tslint:disable-next-line: variable-name
   private _isShow = true;
 
   constructor(private groupeService: GroupeService, private messageService: MessageService) {
