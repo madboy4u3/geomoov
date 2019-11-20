@@ -1,4 +1,5 @@
 import { GroupeDto } from '../models/GroupeDto';
+import { ParcoursDto } from '../models/ParcoursDto';
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
@@ -39,6 +40,13 @@ export class GroupeService {
      */
     recupererGroupes(id): Observable<GroupeDto> {
         const result = this.http.get<GroupeDto>(this.URL + '/' + id);
+        return result;
+    }
+    /**
+     * permet de récuperer la liste des parcours
+     */
+    recupererListeParcours(id: number): Observable<ParcoursDto[]> {
+        const result = this.http.get<Array<ParcoursDto>>(this.URL + '/' + id + '/parcours');
         return result;
     }
 

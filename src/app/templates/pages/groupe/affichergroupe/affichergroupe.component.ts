@@ -4,6 +4,7 @@ import { GroupeService } from 'src/app/services/GroupeService';
 import { MessageService } from 'src/app/helpers/MessageService';
 import { Observable } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ParcoursDto } from 'src/app/models/ParcoursDto';
 
 @Component({
   selector: 'app-affichergroupe',
@@ -14,6 +15,7 @@ export class AffichergroupeComponent implements OnInit {
   QUEUE_MESSAGES_KEY = 'formGroupe';
 
   private listeGroupes: Array<GroupeDto> = [];
+  private listeParcours: Array<ParcoursDto> = [];
   groupe: GroupeDto = new GroupeDto();
   private subscription: any;
   private queueMessages: Observable<any>;
@@ -27,6 +29,9 @@ export class AffichergroupeComponent implements OnInit {
     this.queueMessages.subscribe((groupe: GroupeDto) => {
       this.listeGroupes.push(groupe);
     });
+    this.queueMessages.subscribe((parcours: ParcoursDto) => {
+      this.listeParcours.push(parcours);
+    });
 
     const obs = this.groupeService.recupererListeGroupes();
     obs.subscribe(resp => {
@@ -39,6 +44,8 @@ export class AffichergroupeComponent implements OnInit {
       this.groupe = resp;
     });
 
+    const obs3 = this.groupeService.recupererListeParcours(this.id);
+    obs3.subscribe(resp => this.listeParcours = resp);
 
   }
 

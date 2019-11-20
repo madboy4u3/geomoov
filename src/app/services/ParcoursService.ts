@@ -25,13 +25,6 @@ export class ParcoursService {
         return result;
     }
 
-    /**
-     * permet de récuperer la liste des parcours
-     */
-    recupererListeParcours(): Observable<ParcoursDto[]> {
-        const result = this.http.get<Array<ParcoursDto>>(this.URL);
-        return result;
-    }
 
     /**
      *

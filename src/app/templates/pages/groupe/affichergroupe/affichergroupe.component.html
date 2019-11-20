@@ -12,14 +12,8 @@
 </ion-toolbar>
 <ion-content>
   <ion-list>
-    <ion-item>
-      <ion-label>Protégé 1</ion-label>
-      <ion-button [routerLink]="['./']">
-        <ion-icon size="small" slot="icon-only" name="close"></ion-icon>
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>Protégé 2</ion-label>
+    <ion-item *ngFor="let valeur of listeParcours">
+      <ion-label>{{valeur._nom}}</ion-label>
       <ion-button [routerLink]="['./']">
         <ion-icon size="small" slot="icon-only" name="close"></ion-icon>
       </ion-button>
