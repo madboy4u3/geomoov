@@ -5,9 +5,6 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
-
-
 import { AppComponent } from './app.component';
 import { GroupesComponent } from './templates/pages/groupe/groupes/groupes.component';
 import { FormGroupeComponent } from './components/form-groupe/form-groupe.component';
@@ -30,7 +27,6 @@ import { AffichergroupeComponent } from './templates/pages/groupe/affichergroupe
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
     FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, AffichergroupeComponent
-
   ],
   entryComponents: [HomePage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule, HomePageModule],

@@ -13,4 +13,13 @@
     <ion-textarea style="margin-top:20px;">{{pickupLocation}}</ion-textarea>
   </ion-item>
 
+
+  <ion-item>
+    <ion-label>Mes groupes</ion-label>
+    <ion-select value="brown" cancel-text="Annuler" ok-text="OK">
+      <ion-select-option *ngFor="let valeur of listeGroupes" value="valeur._titre"> {{valeur._titre}}
+      </ion-select-option>
+
+    </ion-select>
+  </ion-item>
 </ion-content>
