@@ -4,6 +4,8 @@ export class ParcoursDto {
     private _description: string;
     private _adresseDepart: string;
     private _adresseArrivee: string;
+    private _groupeId: number;
+
 
     constructor() { }
 
@@ -33,5 +35,11 @@ export class ParcoursDto {
     }
     public set adresseArrivee(value: string) {
         this._adresseArrivee = value;
+    }
+    public get groupeId(): number {
+        return this._groupeId;
+    }
+    public set groupeId(value: number) {
+        this._groupeId = value;
     }
 }

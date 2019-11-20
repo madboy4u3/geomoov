@@ -17,7 +17,8 @@ export class AffichergroupeComponent implements OnInit {
   groupe: GroupeDto = new GroupeDto();
   private subscription: any;
   private queueMessages: Observable<any>;
-  private id: number;
+  // tslint:disable-next-line: variable-name
+  private _id: number;
   constructor(private groupeService: GroupeService, private messageService: MessageService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -47,5 +48,10 @@ export class AffichergroupeComponent implements OnInit {
       this.subscription.unsubscribe();
     }
   }
-
+  public get id(): number {
+    return this._id;
+  }
+  public set id(value: number) {
+    this._id = value;
+  }
 }

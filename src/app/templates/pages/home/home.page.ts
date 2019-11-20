@@ -17,7 +17,7 @@ export class HomePage {
   QUEUE_MESSAGES_KEY = 'formGroupe';
   private listeGroupes: Array<GroupeDto> = [];
   private queueMessages: Observable<any>;
-
+  private liste;
   pickupLocation: string;
   constructor(private router: Router, private route: ActivatedRoute,
     private messageService: MessageService, private groupeService: GroupeService) {

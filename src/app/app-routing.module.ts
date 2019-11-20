@@ -23,13 +23,9 @@ const routes: Routes = [
   { path: 'proteges', component: ProtegesComponent },
   { path: 'pickup-location', loadChildren: './templates/pages/pickup-location/pickup-location.module#PickupLocationPageModule' },
   {
-    path: 'parcours', component: ParcoursComponent,
-    children: [
-      {
-        path: 'ajouter', component: AjouterParcoursComponent
-      }
-    ]
+    path: 'parcours', component: ParcoursComponent
   },
+  { path: 'groupe/afficher/:id/add-parcour', component: AjouterParcoursComponent, pathMatch: 'prefix' },
 
 
 ];

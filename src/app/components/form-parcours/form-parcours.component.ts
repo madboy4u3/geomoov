@@ -14,18 +14,22 @@ import { Observable } from 'rxjs';
 export class FormParcoursComponent implements OnInit {
   QUEUE_MESSAGES_KEY = 'formParcours';
   parcoursDto: ParcoursDto;
+  private id: number;
 
-  constructor(private parcoursService: ParcoursService, private messageService: MessageService) {
+  constructor(private parcoursService: ParcoursService, private messageService: MessageService, private activatedRoute: ActivatedRoute) {
     this.parcoursDto = new ParcoursDto();
   }
 
   ngOnInit() {
+    // tslint:disable-next-line: radix
+    this.id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
   }
 
   /**
    * Ajouter un parcours
    */
   ajouterParcours() {
+    this.parcoursDto.groupeId = this.id;
     const obs = this.parcoursService.ajouter(this.parcoursDto);
     obs.subscribe((result) => {
       this.messageService.sendData(this.QUEUE_MESSAGES_KEY, this.parcoursDto);

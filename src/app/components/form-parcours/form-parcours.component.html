@@ -27,7 +27,8 @@
             <ion-row>
                 <ion-col>
                     <ion-button size="default" type="submit" color="success">Ajouter</ion-button>
-                    <ion-button size="default" type="reset" value="Reset" color="danger">Annuler</ion-button>
+                    <ion-button size="default" type="reset" value="Reset" color="danger"
+                        [routerLink]="['/groupe/afficher',id]">Annuler</ion-button>
                 </ion-col>
             </ion-row>
         </ion-grid>
