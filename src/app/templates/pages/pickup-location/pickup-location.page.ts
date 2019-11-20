@@ -92,7 +92,7 @@ export class PickupLocationPage {
 
       this.newMarker.on('dragend', () => {
         const position = this.newMarker.getLatLng();
-        this.getAddress(position.lat, position.lng);// This line is added
+        this.getAddress(position.lat, position.lng); // This line is added
 
 
       });

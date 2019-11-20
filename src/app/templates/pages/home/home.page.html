@@ -1,11 +1,3 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Access Location
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
   <ion-item style="cursor: pointer;margin-top:100px;" (click)="onpickupClick()">
     <ion-icon slot="start" name="locate"></ion-icon>
@@ -15,11 +7,10 @@
 
 
   <ion-item>
-    <ion-label>Mes groupes</ion-label>
-    <ion-select value="brown" cancel-text="Annuler" ok-text="OK">
-      <ion-select-option *ngFor="let valeur of listeGroupes" value="valeur._titre"> {{valeur._titre}}
+    <ion-label floating>Mes groupes</ion-label>
+    <ion-select placeholder="Choisir" cancel-text="Annuler" ok-text="OK">
+      <ion-select-option [value]="valeur._titre" *ngFor="let valeur of listeGroupes"> {{valeur._titre}}
       </ion-select-option>
-
     </ion-select>
   </ion-item>
 </ion-content>
