@@ -4,6 +4,7 @@ import { ProtegeService } from 'src/app/services/ProtegeService';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MessageService } from 'src/app/helpers/MessageService';
 import { Observable } from 'rxjs';
+import { SurveillerProtegeDto } from 'src/app/models/SurveillerProtegeDto';
 
 
 @Component({
@@ -14,21 +15,27 @@ import { Observable } from 'rxjs';
 
 export class FormProtegeComponent implements OnInit {
   QUEUE_MESSAGES_KEY = 'formProtege';
-  pDto: ProtegeDto;
-  constructor(private protegeService: ProtegeService, private messageService: MessageService) {
-    this.pDto = new ProtegeDto();
+  sPDto: SurveillerProtegeDto;
+  id: number;
+  constructor(private protegeService: ProtegeService, private messageService: MessageService, private activatedRoute: ActivatedRoute) {
+    this.sPDto = new SurveillerProtegeDto();
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    // tslint:disable-next-line: radix
+    this.id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
+    this.sPDto.groupeId = this.id;
+  }
   /**
    * Ajouter un Protege
    */
   ajouter() {
-    const obs = this.protegeService.ajouter(this.pDto);
+    const obs = this.protegeService.ajouter(this.sPDto);
     obs.subscribe((result) => {
-      this.messageService.sendData(this.QUEUE_MESSAGES_KEY, this.pDto);
+      this.messageService.sendData(this.QUEUE_MESSAGES_KEY, this.sPDto);
       console.log(result);
     });
+    console.log(this.sPDto);
   }
   /**
    * Modifier un groupe

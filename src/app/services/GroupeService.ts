@@ -3,6 +3,7 @@ import { ParcoursDto } from '../models/ParcoursDto';
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { ProtegeDto } from '../models/ProtegeDto';
 // Equivalent de @Service de spring
 // On peut le mettre ici ou dans le app module dans les providers
 @Injectable({
@@ -47,6 +48,14 @@ export class GroupeService {
      */
     recupererListeParcours(id: number): Observable<ParcoursDto[]> {
         const result = this.http.get<Array<ParcoursDto>>(this.URL + '/' + id + '/parcours');
+        return result;
+    }
+
+    /**
+     * permet de récuperer la liste des parcours
+     */
+    recupererListeProteges(id: number): Observable<ProtegeDto[]> {
+        const result = this.http.get<Array<ProtegeDto>>(this.URL + '/' + id + '/proteges');
         return result;
     }
 

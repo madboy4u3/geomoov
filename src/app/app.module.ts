@@ -24,9 +24,11 @@ import { HomePage } from './templates/pages/home/home.page';
 import { HomePageModule } from './templates/pages/home/home.module';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AffichergroupeComponent } from './templates/pages/groupe/affichergroupe/affichergroupe.component';
+import { AjouterprotegeComponent } from './templates/pages/protege/ajouterprotege/ajouterprotege.component';
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
-    FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, AffichergroupeComponent
+    FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, AffichergroupeComponent,
+    AjouterprotegeComponent
   ],
   entryComponents: [HomePage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule, HomePageModule],

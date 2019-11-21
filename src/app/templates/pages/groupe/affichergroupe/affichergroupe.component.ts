@@ -5,6 +5,7 @@ import { MessageService } from 'src/app/helpers/MessageService';
 import { Observable } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ParcoursDto } from 'src/app/models/ParcoursDto';
+import { ProtegeDto } from 'src/app/models/ProtegeDto';
 
 @Component({
   selector: 'app-affichergroupe',
@@ -16,6 +17,7 @@ export class AffichergroupeComponent implements OnInit {
 
   private listeGroupes: Array<GroupeDto> = [];
   private listeParcours: Array<ParcoursDto> = [];
+  private listeProteges: Array<ProtegeDto> = [];
   groupe: GroupeDto = new GroupeDto();
   private subscription: any;
   private queueMessages: Observable<any>;
@@ -33,6 +35,10 @@ export class AffichergroupeComponent implements OnInit {
       this.listeParcours.push(parcours);
     });
 
+    this.queueMessages.subscribe((proteges: ProtegeDto) => {
+      this.listeProteges.push(proteges);
+    });
+
     const obs = this.groupeService.recupererListeGroupes();
     obs.subscribe(resp => {
       this.listeGroupes = resp;
@@ -47,6 +53,9 @@ export class AffichergroupeComponent implements OnInit {
     const obs3 = this.groupeService.recupererListeParcours(this.id);
     obs3.subscribe(resp => this.listeParcours = resp);
 
+    const obs4 = this.groupeService.recupererListeProteges(this.id);
+    obs4.subscribe(resp => this.listeProteges = resp);
+    console.log(this.listeProteges);
   }
 
   // tslint:disable-next-line: use-lifecycle-interface

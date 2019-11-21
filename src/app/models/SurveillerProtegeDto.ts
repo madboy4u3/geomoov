@@ -1,9 +1,8 @@
-export class ProtegeDto {
+export class SurveillerProtegeDto {
     // tslint:disable: variable-name
     private _tel: string;
     private _groupeId: number;
-    private _nom: string;
-    private _prenom: string;
+
 
     constructor() { }
 
@@ -18,17 +17,5 @@ export class ProtegeDto {
     }
     public set groupeId(value: number) {
         this._groupeId = value;
-    }
-    public get nom(): string {
-        return this._nom;
-    }
-    public set nom(value: string) {
-        this._nom = value;
-    }
-    public get prenom(): string {
-        return this._prenom;
-    }
-    public set prenom(value: string) {
-        this._prenom = value;
     }
 }
