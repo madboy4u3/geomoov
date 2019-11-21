@@ -29,7 +29,8 @@ const routes: Routes = [
     path: 'parcours', component: ParcoursComponent
   },
   { path: 'groupe/afficher/:id/add-parcour', component: AjouterParcoursComponent, pathMatch: 'prefix' },
-  {path: 'inscription', component: InscriptionComponent},
+  { path: 'groupe/afficher/:id/add-protege', component: AjouterprotegeComponent, pathMatch: 'prefix' },
+  { path: 'inscription', component: InscriptionComponent },
   { path: 'page-accueil', loadChildren: './templates/pages/page-accueil/page-accueil.module#PageAccueilPageModule' },
   { path: 'accueil', component: PageAccueilPage },
 

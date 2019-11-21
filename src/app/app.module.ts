@@ -31,7 +31,7 @@ import { InscriptionComponent } from './templates/pages/inscription/inscription/
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
     FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, AffichergroupeComponent, InscriptionComponent,
-  FormInscriptionComponent, PageAccueilPage, InscriptionComponent],
+    FormInscriptionComponent, PageAccueilPage, InscriptionComponent, AjouterprotegeComponent],
   entryComponents: [HomePage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule, HomePageModule],
   providers: [
