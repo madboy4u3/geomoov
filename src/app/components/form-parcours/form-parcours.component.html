@@ -1,5 +1,9 @@
 <div>
-    <h3> Ajouter un parcours</h3>
+    <ion-toolbar color="primary">
+        <div>
+            <ion-title>Mes parcours</ion-title>
+        </div>
+    </ion-toolbar>
     <form action="/api/parcours" (ngSubmit)="ajouterParcours()">
         <ion-item>
             <label for="field-titre">nom :</label>
@@ -26,8 +30,8 @@
         <ion-grid>
             <ion-row>
                 <ion-col>
-                    <ion-button size="default" type="submit" color="success">Ajouter</ion-button>
-                    <ion-button size="default" type="reset" value="Reset" color="danger"
+                    <ion-button class="float-right" size="default" type="submit" color="success">Ajouter</ion-button>
+                    <ion-button class="float-right" size="default" type="reset" value="Reset" color="danger"
                         [routerLink]="['/groupe/afficher',id]">Annuler</ion-button>
                 </ion-col>
             </ion-row>

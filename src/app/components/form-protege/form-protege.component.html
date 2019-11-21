@@ -1,4 +1,10 @@
 <div>
+  <ion-toolbar color="primary">
+    <div>
+      <ion-title>Mes protégés</ion-title>
+    </div>
+  </ion-toolbar>
+
   <form (ngSubmit)="ajouter()">
     <ion-item>
       <label for="field-tel">Numero de téléphone:</label>
@@ -7,27 +13,13 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button expand="block" size="default" type="submit" color="success">Ajouter</ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button expand="block" size="default" type="reset" (click)="onReset()" color="success">Annuler
+          <ion-button float-right size="default" type="reset" (click)="onReset()" color="danger">Annuler
           </ion-button>
+          <ion-button float-right size="default" type="submit" color="success">Ajouter</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
-
-
   </form>
-
-  <h1>Liste des protégés :</h1>
-
-  <ion-list>
-    <ion-item>I</ion-item>
-    <ion-item>am</ion-item>
-    <ion-item>a</ion-item>
-    <ion-item>list</ion-item>
-  </ion-list>
-
 
 
 </div>
