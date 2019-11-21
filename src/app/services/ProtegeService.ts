@@ -30,6 +30,7 @@ export class ProtegeService {
      */
     recupererListeProtege(): Observable<ProtegeDto[]> {
         const result = this.http.get<Array<ProtegeDto>>(this.URL);
+        console.log(result);
         return result;
     }
 

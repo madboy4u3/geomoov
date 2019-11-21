@@ -35,7 +35,6 @@ export class FormProtegeComponent implements OnInit {
       this.messageService.sendData(this.QUEUE_MESSAGES_KEY, this.sPDto);
       console.log(result);
     });
-    console.log(this.sPDto);
   }
   /**
    * Modifier un groupe

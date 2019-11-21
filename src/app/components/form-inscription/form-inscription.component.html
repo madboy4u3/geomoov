@@ -1,0 +1,66 @@
+<ion-toolbar color="primary">
+    <div>
+        <ion-title text-center>Inscription</ion-title>
+    </div>
+</ion-toolbar>
+<form action="/inscription" (ngSubmit)="ajouter()">
+    <ion-item>
+        <label for="field-prenom">Prénom :</label>
+        <ion-input type="text" id="field-prenom" name="veilleur.prenom" [(ngModel)]="veilleurDto.prenom"></ion-input>
+    </ion-item>
+    <ion-item>
+        <label for="field-nom">Nom :</label>
+        <ion-input type="text-area" id="field-nom" name="veilleur.nom" [(ngModel)]="veilleurDto.nom">
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <label for="field-dateNaissance">Date de naissance :</label>
+        <ion-input type="dateNaissance" id="field-dateNaissance" name="veilleur.dateNaissance"
+            [(ngModel)]="veilleurDto.dateNaissance">
+        </ion-input>
+    </ion-item>
+    <ion-item>
+        <label for="field-telephone">Téléphone :</label>
+        <ion-input type="text-area" id="field-telephone" name="veilleur.telephone" [(ngModel)]="veilleurDto.telephone">
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <label for="field-mail">Adresse mail :</label>
+        <ion-input type="text-area" id="field-mail" name="veilleur.mail" [(ngModel)]="veilleurDto.mail">
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <label for="field-password">Mot de passe:</label>
+        <ion-input type="password" id="field-password" name="veilleur.password" [(ngModel)]="veilleurDto.password">
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <label for="field-adresse">Adresse :</label>
+        <ion-input type="text-area" id="field-adresse" name="veilleur.adresse" [(ngModel)]="veilleurDto.adresse">
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <label for="field-codePostale">Code postale :</label>
+        <ion-input type="text-area" id="field-codePostale" name="veilleur.codePostale"
+            [(ngModel)]="veilleurDto.codePostale">
+        </ion-input>
+    </ion-item>
+
+    <ion-grid>
+        <ion-row flex-wrap="nowrap" align-items="flex-start" justify-content="end">
+            <ion-col>
+                <ion-button class="ion-float-right" size="default" type="reset" value="Reset" color="danger">Annuler
+                </ion-button>
+                <ion-button class="ion-float-right" size="default" type="submit" color="success">Ajouter</ion-button>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+</form>

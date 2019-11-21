@@ -1,5 +1,6 @@
 export class ProtegeDto {
     // tslint:disable: variable-name
+    private _id: number;
     private _tel: string;
     private _groupeId: number;
     private _nom: string;
@@ -30,5 +31,11 @@ export class ProtegeDto {
     }
     public set prenom(value: string) {
         this._prenom = value;
+    }
+    public get id(): number {
+        return this._id;
+    }
+    public set id(value: number) {
+        this._id = value;
     }
 }

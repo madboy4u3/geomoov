@@ -19,6 +19,8 @@ export class AffichergroupeComponent implements OnInit {
   private listeParcours: Array<ParcoursDto> = [];
   private listeProteges: Array<ProtegeDto> = [];
   groupe: GroupeDto = new GroupeDto();
+  parcours: ParcoursDto = new ParcoursDto();
+  proteges: ProtegeDto = new ProtegeDto();
   private subscription: any;
   private queueMessages: Observable<any>;
   // tslint:disable-next-line: variable-name
@@ -54,8 +56,9 @@ export class AffichergroupeComponent implements OnInit {
     obs3.subscribe(resp => this.listeParcours = resp);
 
     const obs4 = this.groupeService.recupererListeProteges(this.id);
-    obs4.subscribe(resp => this.listeProteges = resp);
-    console.log(this.listeProteges);
+    obs4.subscribe(resp => {
+      this.listeProteges = resp;
+    });
   }
 
   // tslint:disable-next-line: use-lifecycle-interface
