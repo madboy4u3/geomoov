@@ -26,12 +26,12 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AffichergroupeComponent } from './templates/pages/groupe/affichergroupe/affichergroupe.component';
 import { AjouterprotegeComponent } from './templates/pages/protege/ajouterprotege/ajouterprotege.component';
 import { FormInscriptionComponent } from './components/form-inscription/form-inscription.component';
+import { PageAccueilPage } from './templates/pages/page-accueil/page-accueil.page';
 import { InscriptionComponent } from './templates/pages/inscription/inscription/inscription.component';
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
-    FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, AffichergroupeComponent,
-    AjouterprotegeComponent, FormInscriptionComponent, InscriptionComponent
-  ],
+    FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, AffichergroupeComponent, InscriptionComponent,
+  FormInscriptionComponent, PageAccueilPage, InscriptionComponent],
   entryComponents: [HomePage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule, HomePageModule],
   providers: [

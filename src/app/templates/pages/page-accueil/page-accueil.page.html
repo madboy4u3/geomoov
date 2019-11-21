@@ -1,0 +1,35 @@
+
+
+
+<ion-content padding class = "contentt" >
+<div class ="accueil">
+    <ion-toolbar color="primary">
+        <div>
+            <ion-title class="ion-text-center" size = "small" >L'Appli qui protège votre famille</ion-title>
+        </div>
+      </ion-toolbar>
+      <img  src="../assets/images/logoo.png" class="logo"  alt=""/>
+      <form action="/accueil" >
+        <ion-item>
+            <label for="field-Identifiant">Identifiant :</label>
+            <ion-input type="text" id="field-Identifiant" name="veilleur.nom"></ion-input>
+        </ion-item>
+        <ion-item>
+            <label for="field-password">Mot de passe :</label>
+            <ion-input type="text-area" id="field-password" name="veilleur.password">
+            </ion-input>
+        </ion-item>
+        <ion-grid>
+            <ion-row flex-wrap="nowrap" align-items="flex-end" justify-content="end">
+                <ion-col>
+                  <ion-button size ="small">Se connecter</ion-button>
+                  <ion-button size ="small" [routerLink]="['/inscription']">S'inscrire </ion-button> 
+                  
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+      
+      </form>
+    </div>
+
+</ion-content>

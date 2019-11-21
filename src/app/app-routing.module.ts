@@ -9,6 +9,7 @@ import { AjouterParcoursComponent } from './templates/pages/mesparcours/ajouter-
 import { AffichergroupeComponent } from './templates/pages/groupe/affichergroupe/affichergroupe.component';
 import { InscriptionComponent } from './templates/pages/inscription/inscription/inscription.component';
 import { AjouterprotegeComponent } from './templates/pages/protege/ajouterprotege/ajouterprotege.component';
+import { PageAccueilPage } from './templates/pages/page-accueil/page-accueil.page';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,8 +29,10 @@ const routes: Routes = [
     path: 'parcours', component: ParcoursComponent
   },
   { path: 'groupe/afficher/:id/add-parcour', component: AjouterParcoursComponent, pathMatch: 'prefix' },
-  { path: 'groupe/afficher/:id/add-protege', component: AjouterprotegeComponent, pathMatch: 'prefix' },
-  { path: 'inscription', component: InscriptionComponent }
+  {path: 'inscription', component: InscriptionComponent},
+  { path: 'page-accueil', loadChildren: './templates/pages/page-accueil/page-accueil.module#PageAccueilPageModule' },
+  { path: 'accueil', component: PageAccueilPage },
+
 ];
 
 @NgModule({
