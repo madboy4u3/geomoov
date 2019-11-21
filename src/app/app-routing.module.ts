@@ -8,6 +8,7 @@ import { ParcoursComponent } from './templates/pages/mesparcours/parcours/parcou
 import { AjouterParcoursComponent } from './templates/pages/mesparcours/ajouter-parcours/ajouter-parcours.component';
 import { AffichergroupeComponent } from './templates/pages/groupe/affichergroupe/affichergroupe.component';
 import { InscriptionComponent } from './templates/pages/Inscription/inscription/inscription.component';
+import { PageAccueilPage } from './templates/pages/page-accueil/page-accueil.page';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,6 +29,9 @@ const routes: Routes = [
   },
   { path: 'groupe/afficher/:id/add-parcour', component: AjouterParcoursComponent, pathMatch: 'prefix' },
   {path: 'inscription', component: InscriptionComponent},
+  { path: 'page-accueil', loadChildren: './templates/pages/page-accueil/page-accueil.module#PageAccueilPageModule' },
+  { path: 'accueil', component: PageAccueilPage },
+
 ];
 
 @NgModule({
