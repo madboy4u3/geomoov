@@ -16,8 +16,8 @@
 
   <ion-item>
     <ion-label>Mes groupes</ion-label>
-    <ion-select value="brown" cancel-text="Annuler" ok-text="OK">
-      <ion-select-option *ngFor="let valeur of listeGroupes" value="valeur._titre"> {{valeur._titre}}
+    <ion-select placeholder="Choisir" cancel-text="Annuler" ok-text="OK">
+      <ion-select-option *ngFor="let valeur of listeGroupes" [value]="valeur._titre"> {{valeur._titre}}
       </ion-select-option>
 
     </ion-select>
