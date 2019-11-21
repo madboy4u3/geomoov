@@ -11,6 +11,7 @@
 
 </ion-toolbar>
 <ion-content>
+  <h2>Mes protégés</h2>
   <ion-list>
     <ion-item *ngFor="let valeur of listeProteges">
       <ion-label>{{valeur._nom}}</ion-label>
@@ -21,6 +22,7 @@
   </ion-list>
 
   <ion-list>
+    <h2>Mes parcours</h2>
     <ion-item *ngFor="let valeur of listeParcours">
       <ion-label>{{valeur._nom}}</ion-label>
       <ion-button [routerLink]="['./']">
@@ -28,7 +30,7 @@
       </ion-button>
     </ion-item>
   </ion-list>
-
+  <!--
   <ion-button class="ion-float-right" color="danger" size="small" [routerLink]="['/groupe']">
     <ion-icon slot="start" name="arrow-dropleft"></ion-icon>Retour
   </ion-button>
@@ -37,5 +39,22 @@
   </ion-button>
   <ion-button class="ion-float-right" color="primary" size="small" [routerLink]="['/groupe/afficher',id,'add-protege']">
     <ion-icon slot="start" name="add-circle"></ion-icon>Protégé
-  </ion-button>
+  </ion-button> -->
+
+  <ion-fab horizontal="center" vertical="bottom" slot="fixed">
+    <ion-fab-button color="secondary">
+      <ion-icon name="arrow-dropright"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button color="danger" [routerLink]="['/groupe']">
+        <ion-icon slot="start" name="arrow-dropleft"></ion-icon>Retour
+      </ion-fab-button>
+      <ion-fab-button color="success" [routerLink]="['/groupe/afficher',id,'add-parcour']">
+        <ion-icon slot="start" name="add-circle"></ion-icon>Parcours
+      </ion-fab-button>
+      <ion-fab-button color="success" [routerLink]="['/groupe/afficher',id,'add-protege']">
+        <ion-icon slot="start" name="add-circle"></ion-icon>Protégé
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
