@@ -28,10 +28,11 @@ import { AjouterprotegeComponent } from './templates/pages/protege/ajouterproteg
 import { FormInscriptionComponent } from './components/form-inscription/form-inscription.component';
 import { PageAccueilPage } from './templates/pages/page-accueil/page-accueil.page';
 import { InscriptionComponent } from './templates/pages/inscription/inscription/inscription.component';
+import { CompteProtegeComponent } from './templates/pages/compteProtege/compteProtege.component';
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
     FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, AffichergroupeComponent, InscriptionComponent,
-    FormInscriptionComponent, PageAccueilPage, InscriptionComponent, AjouterprotegeComponent],
+    FormInscriptionComponent, PageAccueilPage, InscriptionComponent, AjouterprotegeComponent, CompteProtegeComponent],
   entryComponents: [HomePage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule, HomePageModule],
   providers: [
