@@ -29,7 +29,7 @@ export class AffichergroupeComponent implements OnInit {
 
   ngOnInit() {
     this.queueMessages = this.messageService.getMessagesQueues(this.QUEUE_MESSAGES_KEY);
-
+    console.log(this.queueMessages.forEach);
     this.queueMessages.subscribe((groupe: GroupeDto) => {
       this.listeGroupes.push(groupe);
     });
