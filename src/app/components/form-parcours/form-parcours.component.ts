@@ -32,7 +32,7 @@ export class FormParcoursComponent implements OnInit {
     this.parcoursDto.groupeId = this.id;
     const obs = this.parcoursService.ajouter(this.parcoursDto);
     obs.subscribe((result) => {
-      this.messageService.sendData(this.QUEUE_MESSAGES_KEY, this.parcoursDto);
+      this.messageService.sendData(this.QUEUE_MESSAGES_KEY, result);
       console.log(result);
     });
   }

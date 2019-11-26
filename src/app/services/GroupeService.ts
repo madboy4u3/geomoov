@@ -71,5 +71,9 @@ export class GroupeService {
      * Supprimer un Groupe
      * @param id number
      */
-    suprimer(id: number) { }
+
+    deleteGroupe(id: number): Observable<boolean> {
+        const result = this.http.get<boolean>(this.URL + '/' + id + '/delete');
+        return result
+    }
 }

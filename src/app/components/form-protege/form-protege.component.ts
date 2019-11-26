@@ -32,7 +32,7 @@ export class FormProtegeComponent implements OnInit {
   ajouter() {
     const obs = this.protegeService.ajouter(this.sPDto);
     obs.subscribe((result) => {
-      this.messageService.sendData(this.QUEUE_MESSAGES_KEY, this.sPDto);
+      this.messageService.sendData(this.QUEUE_MESSAGES_KEY, result);
       console.log(result);
     });
   }

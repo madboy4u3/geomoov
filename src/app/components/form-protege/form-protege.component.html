@@ -8,14 +8,18 @@
   <form (ngSubmit)="ajouter()">
     <ion-item>
       <label for="field-tel">Numero de téléphone:</label>
-      <ion-input type="text" id="field-tel" name="groupe.tel" [(ngModel)]="sPDto.tel"></ion-input>
+      <ion-input type="text" id="field-tel" name="proteges.tel" [(ngModel)]="sPDto.tel"></ion-input>
+      <!-- 
+      <ion-input type="text" id="field-tel" name="proteges.nom" [(ngModel)]="sPDto.nom"></ion-input>
+      -->
     </ion-item>
     <ion-grid>
       <ion-row>
         <ion-col>
           <ion-button float-right size="default" type="reset" value="Reset" color="danger"
             [routerLink]="['/groupe/afficher',id]">Annuler</ion-button>
-          <ion-button float-right size="default" type="submit" color="success">Ajouter</ion-button>
+          <ion-button float-right size="default" type="submit" color="success" [routerLink]="['/groupe/afficher',id]">
+            Ajouter</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

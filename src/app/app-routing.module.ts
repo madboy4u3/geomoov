@@ -10,6 +10,8 @@ import { AffichergroupeComponent } from './templates/pages/groupe/affichergroupe
 import { InscriptionComponent } from './templates/pages/inscription/inscription/inscription.component';
 import { AjouterprotegeComponent } from './templates/pages/protege/ajouterprotege/ajouterprotege.component';
 import { PageAccueilPage } from './templates/pages/page-accueil/page-accueil.page';
+import { MapComponent } from './components/map/map.component';
+import { AfficherMapComponent } from './templates/pages/map/afficher-map/afficher-map.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -29,6 +31,7 @@ const routes: Routes = [
     path: 'parcours', component: ParcoursComponent
   },
   { path: 'groupe/afficher/:id/add-parcour', component: AjouterParcoursComponent, pathMatch: 'prefix' },
+  { path: 'map', component: AfficherMapComponent, pathMatch: 'prefix' },
   { path: 'groupe/afficher/:id/add-protege', component: AjouterprotegeComponent, pathMatch: 'prefix' },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'page-accueil', loadChildren: './templates/pages/page-accueil/page-accueil.module#PageAccueilPageModule' },

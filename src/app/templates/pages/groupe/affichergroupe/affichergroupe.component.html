@@ -16,7 +16,7 @@
     <ion-item *ngFor="let valeur of listeProteges">
       <ion-label>{{valeur._nom}}</ion-label>
       <ion-button [routerLink]="['./']">
-        <ion-icon size="small" slot="icon-only" name="close"></ion-icon>
+        <ion-icon size="small" slot="icon-only" name="close" (click)="deleteGroupe()"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>

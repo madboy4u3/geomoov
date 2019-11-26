@@ -4,6 +4,7 @@ import { GroupeService } from 'src/app/services/GroupeService';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MessageService } from 'src/app/helpers/MessageService';
 import { Observable } from 'rxjs';
+import { GroupesComponent } from 'src/app/templates/pages/groupe/groupes/groupes.component';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class FormGroupeComponent implements OnInit {
   // tslint:disable-next-line: variable-name
   private _isShow = true;
 
-  constructor(private groupeService: GroupeService, private messageService: MessageService) {
+  constructor(private groupeService: GroupeService, private messageService: MessageService, private groupe: GroupesComponent) {
     this.gDto = new GroupeDto();
   }
 
@@ -31,8 +32,11 @@ export class FormGroupeComponent implements OnInit {
     this.gDto.veilleurId = 1;
     const obs = this.groupeService.ajouter(this.gDto);
     obs.subscribe((result) => {
-      this.messageService.sendData(this.QUEUE_MESSAGES_KEY, this.gDto);
+      this.messageService.sendData(this.QUEUE_MESSAGES_KEY, result);
       console.log(result);
+      if (result != null) {
+        this.groupe.show();
+      }
     });
   }
   /**

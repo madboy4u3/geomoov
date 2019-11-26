@@ -13,7 +13,9 @@ import { ProtegeDto } from 'src/app/models/ProtegeDto';
   styleUrls: ['./affichergroupe.component.scss'],
 })
 export class AffichergroupeComponent implements OnInit {
-  QUEUE_MESSAGES_KEY = 'formGroupe';
+  MSG_KEY_GROUPE = 'formGroupe';
+  MSG_KEY_PROTEGE = 'formProtege';
+  MSG_KEY_PARCOUR = 'formParcours';
 
   private listeGroupes: Array<GroupeDto> = [];
   private listeParcours: Array<ParcoursDto> = [];
@@ -23,21 +25,23 @@ export class AffichergroupeComponent implements OnInit {
   proteges: ProtegeDto = new ProtegeDto();
   private subscription: any;
   private queueMessages: Observable<any>;
+  private queueMessages1: Observable<any>;
   // tslint:disable-next-line: variable-name
-  private _id: number;
+  private id: number;
   constructor(private groupeService: GroupeService, private messageService: MessageService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.queueMessages = this.messageService.getMessagesQueues(this.QUEUE_MESSAGES_KEY);
-    console.log(this.queueMessages.forEach);
+    this.queueMessages = this.messageService.getMessagesQueues(this.MSG_KEY_GROUPE);
     this.queueMessages.subscribe((groupe: GroupeDto) => {
       this.listeGroupes.push(groupe);
     });
+    this.queueMessages = this.messageService.getMessagesQueues(this.MSG_KEY_PARCOUR);
     this.queueMessages.subscribe((parcours: ParcoursDto) => {
       this.listeParcours.push(parcours);
     });
-
+    this.queueMessages = this.messageService.getMessagesQueues(this.MSG_KEY_PROTEGE);
     this.queueMessages.subscribe((proteges: ProtegeDto) => {
+      console.log('cc2' + this.queueMessages);
       this.listeProteges.push(proteges);
     });
 
@@ -59,6 +63,11 @@ export class AffichergroupeComponent implements OnInit {
     obs4.subscribe(resp => {
       this.listeProteges = resp;
     });
+
+    const obs5 = this.groupeService.deleteGroupe(this.id);
+    obs5.subscribe(resp => {
+      console.log(resp);
+    });
   }
 
   // tslint:disable-next-line: use-lifecycle-interface
@@ -66,11 +75,5 @@ export class AffichergroupeComponent implements OnInit {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
-  }
-  public get id(): number {
-    return this._id;
-  }
-  public set id(value: number) {
-    this._id = value;
   }
 }
