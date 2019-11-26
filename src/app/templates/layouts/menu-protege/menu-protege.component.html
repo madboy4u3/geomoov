@@ -1,0 +1,34 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-toggle autoHide="false">
+          <ion-menu-button></ion-menu-button>
+        </ion-menu-toggle>
+      </ion-buttons>
+      <ion-title>
+        <!--{{ title | titlecase }}-->
+        <h1>GeoMoov</h1>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+
+    <ion-menu side="start" menuId="first" contentId="content1" type="overlay">
+      <ion-list>
+        <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" *ngFor="let p of appPages">
+          <ion-icon slot="start" [name]="p.icon"></ion-icon>
+          <ion-label>
+            {{p.title}}
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-menu>
+    <ion-router-outlet id="content1" main></ion-router-outlet>
+  </ion-content>
+
+
+
+
+
+</ion-app>
