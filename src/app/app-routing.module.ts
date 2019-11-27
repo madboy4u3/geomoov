@@ -11,7 +11,8 @@ import { InscriptionComponent } from './templates/pages/inscription/inscription/
 import { AjouterprotegeComponent } from './templates/pages/protege/ajouterprotege/ajouterprotege.component';
 import { PageAccueilPage } from './templates/pages/page-accueil/page-accueil.page';
 import { CompteProtegeComponent } from './templates/pages/compteProtege/compteProtege.component';
-import { AlerteComponent } from './templates/pages/alerte/alerte.component';
+import { AlerteComponent } from './templates/pages/alertes/alerte/alerte.component';
+import { AfficherAlerteComponent } from './templates/pages/alertes/afficher-alerte/afficher-alerte.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,12 +25,14 @@ const routes: Routes = [
       },
     ]
   },
+  // {    path: ':id/alertes', component: AlerteComponent,    children: [ {path: ':id/show', component: AfficherAlerteComponent},] },
+
   { path: 'groupe/afficher/:id', component: AffichergroupeComponent, pathMatch: 'prefix' },
   { path: 'proteges', component: ProtegesComponent },
   { path: 'pickup-location', loadChildren: './templates/pages/pickup-location/pickup-location.module#PickupLocationPageModule' },
   { path: 'parcours', component: ParcoursComponent },
-  { path: 'alertes', component: AlerteComponent },
-
+  { path: ':id/alertes', component: AlerteComponent },
+  { path: 'alertes/:id/show', component: AfficherAlerteComponent, pathMatch: 'prefix' },
   { path: 'groupe/afficher/:id/add-parcour', component: AjouterParcoursComponent, pathMatch: 'prefix' },
   { path: 'groupe/afficher/:id/add-protege', component: AjouterprotegeComponent, pathMatch: 'prefix' },
   { path: 'inscription', component: InscriptionComponent },

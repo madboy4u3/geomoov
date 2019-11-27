@@ -30,12 +30,13 @@ import { PageAccueilPage } from './templates/pages/page-accueil/page-accueil.pag
 import { InscriptionComponent } from './templates/pages/inscription/inscription/inscription.component';
 import { CompteProtegeComponent } from './templates/pages/compteProtege/compteProtege.component';
 import { MenuProtegeComponent } from './templates/layouts/menu-protege/menu-protege.component';
-import { AlerteComponent } from './templates/pages/alerte/alerte.component';
+import { AlerteComponent } from './templates/pages/alertes/alerte/alerte.component';
+import { AfficherAlerteComponent } from './templates/pages/alertes/afficher-alerte/afficher-alerte.component';
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
     FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, AffichergroupeComponent, InscriptionComponent,
     FormInscriptionComponent, PageAccueilPage, InscriptionComponent, AjouterprotegeComponent,
-    CompteProtegeComponent, MenuProtegeComponent, AlerteComponent],
+    CompteProtegeComponent, MenuProtegeComponent, AlerteComponent, AfficherAlerteComponent],
   entryComponents: [HomePage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule, HomePageModule],
   providers: [

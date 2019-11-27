@@ -1,5 +1,5 @@
 <ion-toolbar color="primary">
-  <ion-title> {{alerte._protegeId | uppercase}} </ion-title>
+  <ion-title> Mes alertes </ion-title>
   <ion-buttons slot="end">
     <ion-button [routerLink]="['./']">
       <ion-icon size="small" slot="icon-only" name="create"></ion-icon>
@@ -11,14 +11,11 @@
 
 </ion-toolbar>
 <ion-content>
-  <h2>Mes alertes</h2>
   <ion-list>
-    <ion-item *ngFor="let valeur of listeAlertes">
-      <ion-label>{{valeur._message}}</ion-label>
-      <ion-button [routerLink]="['./']">
-        <ion-icon size="small" slot="icon-only" name="close"></ion-icon>
-      </ion-button>
+    <ion-item>
+      <ion-label>Message: {{alerte._message}}</ion-label><br>
+      <ion-label>Status: {{alerte._status}}</ion-label>
+      <ion-label>Nom du protégé: {{alerte._protegeName}}</ion-label>
+
     </ion-item>
   </ion-list>
-
-</ion-content>

@@ -71,5 +71,7 @@ export class GroupeService {
      * Supprimer un Groupe
      * @param id number
      */
-    suprimer(id: number) { }
+
+
+
 }

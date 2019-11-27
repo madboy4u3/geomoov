@@ -37,4 +37,12 @@ export class ParcoursService {
      * @param id number
      */
     supprimer(id: number) { }
+
+    /**
+    * permet de récuperer la liste des parcours
+    */
+    recupererListeParcours(id: number): Observable<ParcoursDto[]> {
+        const result = this.http.get<Array<ParcoursDto>>(this.URL + '/' + id + '/parcours');
+        return result;
+    }
 }

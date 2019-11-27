@@ -35,7 +35,7 @@ export class MenuComponent implements OnInit {
     },
     {
       title: 'Mes alertes',
-      url: '/alertes',
+      url: '1/alertes',
       icon: 'alert',
     },
     {

@@ -4,6 +4,15 @@ export class AlerteDto {
     private _message: string;
     private _status: string;
     private _protegeId: number;
+    private _protegeName: string;
+
+    public get protegeName(): string {
+        return this._protegeName;
+    }
+    public set protegeName(value: string) {
+        this._protegeName = value;
+    }
+
     private _veilleurId: number;
 
     constructor() { }

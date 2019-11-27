@@ -10,41 +10,25 @@ import { AlerteDto } from '../models/AlerteDto';
 })
 // C'est un Service pour ajouter un groupe dans la BDD
 export class AlerteService {
-    private URL = 'http://localhost:7001/api/alerte';
+    private URL = 'http://192.168.1.124:7001/api/alerte';
 
     // C'est comme un @Autowire dans le constructor
     // avec le mot "private dans le constructeur" Frabrique le champs , l'ajoute  au constructeur
     constructor(private http: HttpClient) {
     }
-
-    /**
-     * permet de récuperer la liste des alertes
-     */
-    recupererListeAlertes(): Observable<AlerteDto[]> {
-        const result = this.http.get<Array<AlerteDto>>(this.URL);
-        return result;
-    }
-
-    /**
-     * permet de récuperer une alerte
-     * @param id
-     */
-    recupererAlertes(id): Observable<AlerteDto> {
-        const result = this.http.get<AlerteDto>(this.URL + '/' + id);
-        return result;
-    }
-
-
     /**
      *
      * @param groupe Group
      */
-    modifier(groupe: GroupeDto) {
-
+    showAlertes(id): Observable<AlerteDto> {
+        const result = this.http.get<AlerteDto>(this.URL + '/' + id + '/show');
+        return result;
     }
     /**
      * Supprimer un Groupe
      * @param id number
      */
     suprimer(id: number) { }
+
+
 }

@@ -25,8 +25,12 @@ export class ParcoursComponent implements OnInit, OnDestroy {
       this.listeParcours.push(parcours);
     });
 
-    //const obs = this.parcoursService.recupererListeParcours();
-    //obs.subscribe(resp => this.listeParcours = resp);
+    const obs = this.parcoursService.recupererListeParcours();
+    obs.subscribe(resp => {
+      this.listeParcours = resp;
+      console.log(this.listeParcours);
+
+    });
   }
 
   ngOnDestroy() {
