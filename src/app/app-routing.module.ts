@@ -12,6 +12,9 @@ import { AjouterprotegeComponent } from './templates/pages/protege/ajouterproteg
 import { PageAccueilPage } from './templates/pages/page-accueil/page-accueil.page';
 import { MapComponent } from './components/map/map.component';
 import { AfficherMapComponent } from './templates/pages/map/afficher-map/afficher-map.component';
+import { CompteProtegeComponent } from './templates/pages/compteProtege/compteProtege.component';
+import { AlerteComponent } from './templates/pages/alertes/alerte/alerte.component';
+import { AfficherAlerteComponent } from './templates/pages/alertes/afficher-alerte/afficher-alerte.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,18 +27,22 @@ const routes: Routes = [
       },
     ]
   },
+  // {    path: ':id/alertes', component: AlerteComponent,    children: [ {path: ':id/show', component: AfficherAlerteComponent},] },
+
   { path: 'groupe/afficher/:id', component: AffichergroupeComponent, pathMatch: 'prefix' },
   { path: 'proteges', component: ProtegesComponent },
   { path: 'pickup-location', loadChildren: './templates/pages/pickup-location/pickup-location.module#PickupLocationPageModule' },
-  {
-    path: 'parcours', component: ParcoursComponent
-  },
+  { path: 'parcours', component: ParcoursComponent },
+  { path: ':id/alertes', component: AlerteComponent },
+  { path: 'alertes/:id/show', component: AfficherAlerteComponent, pathMatch: 'prefix' },
   { path: 'groupe/afficher/:id/add-parcour', component: AjouterParcoursComponent, pathMatch: 'prefix' },
   { path: 'map', component: AfficherMapComponent, pathMatch: 'prefix' },
   { path: 'groupe/afficher/:id/add-protege', component: AjouterprotegeComponent, pathMatch: 'prefix' },
   { path: 'veilleur', component: InscriptionComponent },
   { path: 'page-accueil', loadChildren: './templates/pages/page-accueil/page-accueil.module#PageAccueilPageModule' },
   { path: 'accueil', component: PageAccueilPage },
+  { path: 'accueilProtege', component: CompteProtegeComponent },
+
 
 ];
 

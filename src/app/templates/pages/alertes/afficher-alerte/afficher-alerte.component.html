@@ -1,0 +1,21 @@
+<ion-toolbar color="primary">
+  <ion-title> Mes alertes </ion-title>
+  <ion-buttons slot="end">
+    <ion-button [routerLink]="['./']">
+      <ion-icon size="small" slot="icon-only" name="create"></ion-icon>
+    </ion-button>
+    <ion-button [routerLink]="['./']">
+      <ion-icon size="small" slot="icon-only" name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+</ion-toolbar>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Message: {{alerte._message}}</ion-label><br>
+      <ion-label>Status: {{alerte._status}}</ion-label>
+      <ion-label>Nom du protégé: {{alerte._protegeName}}</ion-label>
+
+    </ion-item>
+  </ion-list>

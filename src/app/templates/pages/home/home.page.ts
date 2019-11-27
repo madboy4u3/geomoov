@@ -4,6 +4,7 @@ import { GroupeDto } from 'src/app/models/GroupeDto';
 import { MessageService } from 'src/app/helpers/MessageService';
 import { Observable } from 'rxjs';
 import { GroupeService } from 'src/app/services/GroupeService';
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class HomePage {
   private liste;
   pickupLocation: string;
   constructor(private router: Router, private route: ActivatedRoute,
-    private messageService: MessageService, private groupeService: GroupeService) {
+    private messageService: MessageService, private groupeService: GroupeService, private alertCtrl: AlertController) {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.pickupLocation = this.router.getCurrentNavigation().extras.state.pickupLocation;
@@ -48,5 +49,27 @@ export class HomePage {
     this.router.navigate(['pickup-location']);
   }
 
+  showConfirm() {
+    this.alertCtrl.create({
+      header: 'Message SOS',
+      message: 'Au secours  SVP! J\'ai besoin d\'aide.',
+      buttons: [
+        {
+          text: 'Envoyer',
+          handler: () => {
+            console.log('Envoyer');
+          }
+
+        },
+        {
+          text: 'Ignorer',
+          handler: () => {
+            console.log('Ignorer');
+          }
+
+        }
+      ]
+    }).then(alert => alert.present());
+  }
 
 }

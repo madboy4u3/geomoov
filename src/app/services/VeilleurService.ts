@@ -2,13 +2,14 @@ import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { VeilleurDto } from '../models/VeilleurDto';
+import { AlerteDto } from '../models/AlerteDto';
 
 
 @Injectable({
     providedIn: 'root',
 })
-export class VeilleurService{
-    private URL = 'http://localhost:7001/api/veilleur';
+export class VeilleurService {
+    private URL = 'http://192.168.1.124:7001/api/veilleur';
 
     // C'est comme un @Autowire dans le constructor
     // avec le mot "private dans le constructeur" Frabrique le champs , l'ajoute  au constructeur
@@ -44,4 +45,13 @@ export class VeilleurService{
      * @param id number
      */
     supprimer(id: number) { }
+
+    /**
+   * permet de récuperer une liste des alertes à partir l'ID
+   * @param id
+   */
+    recupererAlertes(id): Observable<Array<AlerteDto>> {
+        const result = this.http.get<Array<AlerteDto>>(this.URL + '/' + id + '/alertes');
+        return result;
+    }
 }

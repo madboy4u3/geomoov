@@ -21,6 +21,8 @@ export class GroupesComponent implements OnInit, OnDestroy {
   private _isShow = true;
   public searchTerm = '';
   private liste: Array<GroupeDto> = [];
+  http: any;
+  URL: string;
 
   constructor(private groupeService: GroupeService,
     private messageService: MessageService,
@@ -72,6 +74,11 @@ export class GroupesComponent implements OnInit, OnDestroy {
 
   setSearchTerm(term) {
     this.searchTerm = term;
+  }
+
+
+  suprimer(id: number) {
+
   }
 
 }

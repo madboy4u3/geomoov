@@ -28,14 +28,16 @@ import { AjouterprotegeComponent } from './templates/pages/protege/ajouterproteg
 import { FormInscriptionComponent } from './components/form-inscription/form-inscription.component';
 import { PageAccueilPage } from './templates/pages/page-accueil/page-accueil.page';
 import { InscriptionComponent } from './templates/pages/inscription/inscription/inscription.component';
+import { CompteProtegeComponent } from './templates/pages/compteProtege/compteProtege.component';
+import { AlerteComponent } from './templates/pages/alertes/alerte/alerte.component';
+import { AfficherAlerteComponent } from './templates/pages/alertes/afficher-alerte/afficher-alerte.component';
 import { AfficherMapComponent } from './templates/pages/map/afficher-map/afficher-map.component';
 import { MapComponent } from './components/map/map.component';
-import { Network } from '@ionic-native/network';
-import { GoogleProvider } from 'leaflet-geosearch';
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
     FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, AffichergroupeComponent, InscriptionComponent,
-    FormInscriptionComponent, PageAccueilPage, InscriptionComponent, AjouterprotegeComponent, AfficherMapComponent, MapComponent],
+    FormInscriptionComponent, PageAccueilPage, InscriptionComponent, AjouterprotegeComponent,
+    CompteProtegeComponent, AlerteComponent, AfficherAlerteComponent, AfficherMapComponent, MapComponent],
   entryComponents: [HomePage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule, HomePageModule],
   providers: [
@@ -44,7 +46,6 @@ import { GoogleProvider } from 'leaflet-geosearch';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     NativeGeocoder,
-    GoogleProvider,
     AngularFirestore
   ],
   bootstrap: [AppComponent]

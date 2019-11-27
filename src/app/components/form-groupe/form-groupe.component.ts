@@ -32,11 +32,8 @@ export class FormGroupeComponent implements OnInit {
     this.gDto.veilleurId = 1;
     const obs = this.groupeService.ajouter(this.gDto);
     obs.subscribe((result) => {
-      this.messageService.sendData(this.QUEUE_MESSAGES_KEY, result);
-      console.log(result);
-      if (result != null) {
-        this.groupe.show();
-      }
+      this.messageService.sendData(this.QUEUE_MESSAGES_KEY, this.gDto);
+      console.log(this.gDto);
     });
   }
   /**
@@ -55,5 +52,4 @@ export class FormGroupeComponent implements OnInit {
     console.log(this._isShow);
     this._isShow = !this._isShow;
   }
-
 }

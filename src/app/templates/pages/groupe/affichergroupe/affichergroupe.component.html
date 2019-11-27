@@ -41,19 +41,19 @@
     <ion-icon slot="start" name="add-circle"></ion-icon>Protégé
   </ion-button> -->
 
-  <ion-fab horizontal="center" vertical="bottom" slot="fixed">
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
     <ion-fab-button color="secondary">
       <ion-icon name="arrow-dropright"></ion-icon>
     </ion-fab-button>
     <ion-fab-list side="end">
       <ion-fab-button color="danger" [routerLink]="['/groupe']">
-        <ion-icon slot="start" name="arrow-dropleft"></ion-icon>Retour
+        <ion-icon name="arrow-dropleft"></ion-icon>
       </ion-fab-button>
       <ion-fab-button color="success" [routerLink]="['/groupe/afficher',id,'add-parcour']">
-        <ion-icon slot="start" name="add-circle"></ion-icon>Parcours
+        <ion-icon name="pin"></ion-icon>
       </ion-fab-button>
       <ion-fab-button color="success" [routerLink]="['/groupe/afficher',id,'add-protege']">
-        <ion-icon slot="start" name="add-circle"></ion-icon>Protégé
+        <ion-icon name="people"></ion-icon>
       </ion-fab-button>
     </ion-fab-list>
   </ion-fab>
