@@ -1,23 +1,35 @@
-import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
-import { Inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { MapApiDto } from '../models/MapApiDto';
+import { Observable } from 'rxjs';
+declare var google;
 
 @Injectable({
     providedIn: 'root',
 })
 export class MapService {
+    URL: string = 'https://api-adresse.data.gouv.fr/search/?q=';
+    autoComplete: string = '?autocomplete=1';
 
-    constructor(private nativeGeocoder: NativeGeocoder) {
-    }
+    constructor(private http: HttpClient) { }
 
-    options: NativeGeocoderOptions = {
-        useLocale: true,
-        maxResults: 5
-    };
+    /* getRequest() {
+         const headers = new HttpHeaders()
+             .set('cache-control', 'no-cache')
+             .set('content-type', 'application/json')
+         const body = {
+             token: 'my token'
+         }
+ 
+         return this.http
+             .get(this.url)
+             .subscribe(res => console.log(res));
+     } */
 
-    geocode() {
-        this.nativeGeocoder.forwardGeocode('Berlin', this.options)
-            .then((result: NativeGeocoderResult[]) => console.log('The coordinates are latitude=' + result[0].latitude + ' and longitude=' + result[0].longitude))
-            .catch((error: any) => console.log(error));
+    getApiMap(add: string): Observable<MapApiDto[]> {
+
+        const result = this.http.get<Array<MapApiDto>>(this.URL + 'add' + this.autoComplete);
+        return result;
     }
 
 }

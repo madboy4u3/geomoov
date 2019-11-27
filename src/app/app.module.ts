@@ -30,6 +30,8 @@ import { PageAccueilPage } from './templates/pages/page-accueil/page-accueil.pag
 import { InscriptionComponent } from './templates/pages/inscription/inscription/inscription.component';
 import { AfficherMapComponent } from './templates/pages/map/afficher-map/afficher-map.component';
 import { MapComponent } from './components/map/map.component';
+import { Network } from '@ionic-native/network';
+import { GoogleProvider } from 'leaflet-geosearch';
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
     FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, AffichergroupeComponent, InscriptionComponent,
@@ -42,6 +44,7 @@ import { MapComponent } from './components/map/map.component';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     NativeGeocoder,
+    GoogleProvider,
     AngularFirestore
   ],
   bootstrap: [AppComponent]
