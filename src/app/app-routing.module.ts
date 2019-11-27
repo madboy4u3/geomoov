@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'groupe/afficher/:id/add-parcour', component: AjouterParcoursComponent, pathMatch: 'prefix' },
   { path: 'map', component: AfficherMapComponent, pathMatch: 'prefix' },
   { path: 'groupe/afficher/:id/add-protege', component: AjouterprotegeComponent, pathMatch: 'prefix' },
-  { path: 'inscription', component: InscriptionComponent },
+  { path: 'veilleur', component: InscriptionComponent },
   { path: 'page-accueil', loadChildren: './templates/pages/page-accueil/page-accueil.module#PageAccueilPageModule' },
   { path: 'accueil', component: PageAccueilPage },
 

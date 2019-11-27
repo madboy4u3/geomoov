@@ -8,7 +8,7 @@ import { VeilleurDto } from '../models/VeilleurDto';
     providedIn: 'root',
 })
 export class VeilleurService{
-    private URL = 'http://localhost:7001/api/inscription';
+    private URL = 'http://localhost:7001/api/veilleur';
 
     // C'est comme un @Autowire dans le constructor
     // avec le mot "private dans le constructeur" Frabrique le champs , l'ajoute  au constructeur
