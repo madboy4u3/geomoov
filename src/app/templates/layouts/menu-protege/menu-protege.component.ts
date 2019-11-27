@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-menu-protege',
@@ -8,7 +7,19 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./menu-protege.component.scss'],
 })
 export class MenuProtegeComponent implements OnInit {
+  constructor(location: Location, router: Router) {
+    router.events.subscribe(val => {
+      if (location.path() !== '') {
+        this.route = location.path();
+      } else {
+        this.route = 'Accueil';
+      }
+      this.title = this.route.replace('/', '');
+    });
 
+  }
+
+  // tslint:disable-next-line: member-ordering
   public appPages = [
     {
       title: 'Acceuil',
@@ -35,22 +46,11 @@ export class MenuProtegeComponent implements OnInit {
       url: '/home',
       icon: 'power'
     },
-
   ];
+  // tslint:disable-next-line: member-ordering
   route: string;
   title: string;
-  constructor(location: Location, router: Router) {
-    router.events.subscribe(val => {
-      if (location.path() !== '') {
-        this.route = location.path();
-      } else {
-        this.route = 'Accueil';
-      }
-      this.title = this.route.replace('/', '');
-    });
-
+  ngOnInit(): void {
+    throw new Error("Method not implemented.");
   }
-
-  ngOnInit() { }
-
 }

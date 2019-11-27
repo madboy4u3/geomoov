@@ -32,7 +32,7 @@ export class FormGroupeComponent implements OnInit {
     const obs = this.groupeService.ajouter(this.gDto);
     obs.subscribe((result) => {
       this.messageService.sendData(this.QUEUE_MESSAGES_KEY, this.gDto);
-      console.log(result);
+      console.log(this.gDto);
     });
   }
   /**

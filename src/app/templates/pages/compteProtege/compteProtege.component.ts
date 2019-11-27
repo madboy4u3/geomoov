@@ -35,5 +35,4 @@ export class CompteProtegeComponent implements OnInit {
       ]
     }).then(alert => alert.present());
   }
-
 }
