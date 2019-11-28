@@ -10,7 +10,7 @@ import { SurveillerProtegeDto } from '../models/SurveillerProtegeDto';
 })
 // C'est un Service pour ajouter un protege dans la BDD
 export class ProtegeService {
-    private URL = 'http://localhost:7001/api/protege';
+    private URL = 'http://192.168.1.124:7001//api/protege';
 
     // C'est comme un @Autowire dans le constructor
     // avec le mot "private dans le constructeur" Frabrique le champs , l'ajoute  au constructeur
@@ -27,10 +27,10 @@ export class ProtegeService {
 
     /**
      * permet de récuperer la liste des Protege
+     *   @param id
      */
-    recupererListeProtege(): Observable<ProtegeDto[]> {
-        const result = this.http.get<Array<ProtegeDto>>(this.URL);
-        console.log(result);
+    recupererListeProtege(id): Observable<Array<ProtegeDto>> {
+        const result = this.http.get<Array<ProtegeDto>>(this.URL + '/' + id + '/list');
         return result;
     }
 

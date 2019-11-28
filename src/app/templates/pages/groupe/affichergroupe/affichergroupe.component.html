@@ -11,7 +11,7 @@
 
 </ion-toolbar>
 <ion-content>
-  <h2>Mes protégés</h2>
+  <h4>Mes protégés</h4>
   <ion-list>
     <ion-item *ngFor="let valeur of listeProteges">
       <ion-label>{{valeur._nom}}</ion-label>
@@ -22,7 +22,7 @@
   </ion-list>
 
   <ion-list>
-    <h2>Mes parcours</h2>
+    <h4>Mes parcours</h4>
     <ion-item *ngFor="let valeur of listeParcours">
       <ion-label>{{valeur._nom}}</ion-label>
       <ion-button [routerLink]="['./']">

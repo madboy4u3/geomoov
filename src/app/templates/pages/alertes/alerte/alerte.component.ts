@@ -29,13 +29,19 @@ export class AlerteComponent implements OnInit {
     private navCtrl: NavController) { }
 
   ngOnInit() {
+    this.queueMessages = this.messageService.getMessagesQueues(this.QUEUE_MESSAGES_KEY);
+
+    this.queueMessages.subscribe((alerte: AlerteDto) => {
+      this.listeAlertes.push(alerte);
+    });
 
     // tslint:disable-next-line: radix
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
     const obs2 = this.veilleurService.recupererAlertes(this.id);
     obs2.subscribe(resp => {
       this.listeAlertes = resp;
-      //this.liste = resp;
+      this.liste = resp;
+      console.log(this.listeAlertes);
 
     });
 
@@ -46,7 +52,7 @@ export class AlerteComponent implements OnInit {
   // Search Bar
   setFilteredItems() {
 
-    this.listeAlertes = this.searchBarService.filterItems(this.searchTerm, this.liste);
+    this.listeAlertes = this.searchBarService.filterMessage(this.searchTerm, this.liste);
 
   }
 

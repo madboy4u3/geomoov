@@ -1,1 +1,31 @@
-<app-form-protege></app-form-protege>
+<ion-content>
+    <ion-toolbar color="primary">
+        <div>
+            <ion-title>Mes protégés</ion-title>
+        </div>
+    </ion-toolbar>
+
+    <div>
+        <ion-searchbar animated placeholder="Recherche" showCancelButton="focus" cancelButtonText="Ignorer"
+            [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()">
+        </ion-searchbar>
+        <ion-list>
+            <ion-item *ngFor="let valeur of listeProteges">
+                <ion-label>
+                    {{valeur._nom}}
+                </ion-label>
+                <ion-buttons slot="end">
+                    <ion-button [routerLink]="['./supprimer']">
+                        <ion-icon size="small" slot="icon-only" name="create"></ion-icon>
+                    </ion-button>
+                    <ion-button [routerLink]="['./']" (click)="supprimer(valeur)">
+                        <ion-icon size="small" slot="icon-only" name="close"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+
+            </ion-item>
+        </ion-list>
+
+    </div>
+
+</ion-content>
