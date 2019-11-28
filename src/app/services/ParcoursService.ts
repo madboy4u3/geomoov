@@ -8,7 +8,7 @@ import { ParcoursDto } from '../models/ParcoursDto';
     providedIn: 'root',
 })
 export class ParcoursService {
-    private URL = 'http://localhost:7001/api/parcours';
+    private URL = 'http://192.168.1.124:7001//api/parcours';
 
     // C'est comme un @Autowire dans le constructor
     // avec le mot "private dans le constructeur" Frabrique le champs , l'ajoute  au constructeur
@@ -41,8 +41,8 @@ export class ParcoursService {
     /**
     * permet de récuperer la liste des parcours
     */
-    recupererListeParcours(id: number): Observable<ParcoursDto[]> {
-        const result = this.http.get<Array<ParcoursDto>>(this.URL + '/' + id + '/parcours');
+    recupererListeParcours(id: number): Observable<Array<ParcoursDto>> {
+        const result = this.http.get<Array<ParcoursDto>>(this.URL + '/' + id + '/list');
         return result;
     }
 }

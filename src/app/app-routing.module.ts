@@ -29,8 +29,10 @@ const routes: Routes = [
 
   { path: 'groupe/afficher/:id', component: AffichergroupeComponent, pathMatch: 'prefix' },
   { path: 'proteges', component: ProtegesComponent },
+  { path: 'proteges/:id/list', component: ProtegesComponent, pathMatch: 'prefix' },
   { path: 'pickup-location', loadChildren: './templates/pages/pickup-location/pickup-location.module#PickupLocationPageModule' },
   { path: 'parcours', component: ParcoursComponent },
+  { path: 'parcours/:id/list', component: ParcoursComponent, pathMatch: 'prefix' },
   { path: ':id/alertes', component: AlerteComponent },
   { path: 'alertes/:id/show', component: AfficherAlerteComponent, pathMatch: 'prefix' },
   { path: 'groupe/afficher/:id/add-parcour', component: AjouterParcoursComponent, pathMatch: 'prefix' },

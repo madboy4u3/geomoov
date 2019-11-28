@@ -14,13 +14,13 @@ import { Router } from '@angular/router';
 export class MenuComponent implements OnInit {
   public appPages = [
     {
-      title: 'Acceuil',
+      title: 'Accueil',
       url: '/home',
       icon: 'home'
     },
     {
       title: 'Mes protégés',
-      url: 'proteges',
+      url: 'proteges/1/list',
       icon: 'people',
     },
     {
@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
     },
     {
       title: 'Mes parcours',
-      url: '/parcours',
+      url: 'parcours/1/list',
       icon: 'pin',
     },
     {
