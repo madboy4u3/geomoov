@@ -42,7 +42,7 @@ export class ProtegesComponent implements OnInit {
   }
   // Search Bar
   setFilteredItems() {
-    this.listeProteges = this.searchBarService.filterItems(this.searchTerm, this.liste);
+    this.listeProteges = this.searchBarService.filterNom(this.searchTerm, this.liste);
   }
 
   setSearchTerm(term) {

@@ -4,6 +4,15 @@ export class GroupeDto {
     private _titre: string;
     private _description: string;
     private _veilleurId: number = 1;
+    private _id: number;
+
+
+    public get id(): number {
+        return this._id;
+    }
+    public set id(value: number) {
+        this._id = value;
+    }
 
 
     constructor() { }

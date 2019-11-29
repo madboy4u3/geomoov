@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'parcours', component: ParcoursComponent },
   { path: 'parcours/:id/list', component: ParcoursComponent, pathMatch: 'prefix' },
   { path: ':id/alertes', component: AlerteComponent },
-  { path: 'alertes/:id/show', component: AfficherAlerteComponent, pathMatch: 'prefix' },
+  { path: 'alertes/:id/show', component: AfficherAlerteComponent },
   { path: 'groupe/afficher/:id/add-parcour', component: AjouterParcoursComponent, pathMatch: 'prefix' },
   { path: 'map', component: AfficherMapComponent, pathMatch: 'prefix' },
   { path: 'groupe/afficher/:id/add-protege', component: AjouterprotegeComponent, pathMatch: 'prefix' },

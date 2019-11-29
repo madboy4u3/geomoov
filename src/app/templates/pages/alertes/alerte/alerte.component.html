@@ -12,19 +12,11 @@
     </ion-searchbar>
     <ion-list>
       <ion-item *ngFor="let valeur of listeAlertes">
-        <ion-label>{{valeur._message}}</ion-label>
-        <ion-buttons slot="end">
-          <ion-button [routerLink]="[valeur._id,'./show']">
-            <ion-icon size="small" slot="icon-only" name="eye"></ion-icon>
-          </ion-button>
 
-          <ion-button [routerLink]="['./']">
-            <ion-icon size="small" slot="icon-only" name="create"></ion-icon>
-          </ion-button>
-          <ion-button [routerLink]="['./']" (click)="supprimer(valeur)">
-            <ion-icon size="small" slot="icon-only" name="close"></ion-icon>
-          </ion-button>
-        </ion-buttons>
+        <ion-item>
+          <div class="dto">{{valeur._protegeName}} : {{valeur._message}}</div>
+        </ion-item>
+
 
       </ion-item>
     </ion-list>

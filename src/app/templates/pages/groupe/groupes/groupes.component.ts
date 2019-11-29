@@ -23,6 +23,7 @@ export class GroupesComponent implements OnInit, OnDestroy {
   private liste: Array<GroupeDto> = [];
   http: any;
   URL: string;
+  gDto: GroupeDto;
 
   constructor(private groupeService: GroupeService,
     private messageService: MessageService,
@@ -80,5 +81,9 @@ export class GroupesComponent implements OnInit, OnDestroy {
   suprimer(id: number) {
 
   }
-
+  delete() {
+    if (confirm(`Êtes-vous sûr de vouloir supprimer le groupe $ {gDto._titre}. Cela ne peut pas être annulé .`)) {
+      this.groupeService.deleteGroupe(this.gDto.id);
+    }
+  }
 }

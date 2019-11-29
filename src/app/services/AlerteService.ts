@@ -22,7 +22,15 @@ export class AlerteService {
      */
     showAlertes(id): Observable<AlerteDto> {
         const result = this.http.get<AlerteDto>(this.URL + '/' + id + '/show');
-        console.log(this.URL);
+        console.log(id);
+        return result;
+
+    }
+
+    ajouter(message: AlerteDto, id) {
+        console.log(message);
+        const result = this.http.post<AlerteDto>(this.URL + '/add', message);
+
         return result;
     }
     /**

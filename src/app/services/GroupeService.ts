@@ -73,7 +73,7 @@ export class GroupeService {
      */
 
     deleteGroupe(id: number): Observable<boolean> {
-        const result = this.http.get<boolean>(this.URL + '/' + id + '/delete');
+        const result = this.http.delete<boolean>(this.URL + '/' + id + '/delete');
         return result
     }
 }

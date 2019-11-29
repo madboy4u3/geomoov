@@ -1,19 +1,12 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Access Location
-    </ion-title>
-  </ion-toolbar>
+  <img src="../assets/images/logo.PNG" class="logo" alt="" />
 </ion-header>
 
 <ion-content>
   <ion-item style="cursor: pointer;margin-top:100px;" (click)="onpickupClick()">
     <ion-icon slot="start" name="locate"></ion-icon>
     <ion-label position="stacked">Géolocalisation</ion-label>
-    <ion-textarea style="margin-top:20px;">{{pickupLocation}}</ion-textarea>
   </ion-item>
-
-
   <ion-item>
     <ion-label>Mes groupes</ion-label>
     <ion-select placeholder="Choisir" cancel-text="Annuler" ok-text="OK">
@@ -22,5 +15,28 @@
 
     </ion-select>
   </ion-item>
+
+
+
+  <ion-list>
+    <ion-list-header>Options</ion-list-header>
+    <ion-item [routerLink]="['/proteges/1/list']">
+      <ion-label>Protégés</ion-label>
+      <ion-badge slot="end">10</ion-badge>
+    </ion-item>
+    <ion-item [routerLink]="['/groupe']">
+      <ion-label>Groupes</ion-label>
+      <ion-badge color="secondary" slot="end">4</ion-badge>
+    </ion-item>
+    <ion-item [routerLink]="['/parcours/1/list']">
+      <ion-label>Parcours</ion-label>
+      <ion-badge color="tertiary" slot="end">5</ion-badge>
+    </ion-item>
+    <ion-item [routerLink]="['/1/alertes']">
+      <ion-label>Alertes</ion-label>
+      <ion-badge color="success" slot="end">3</ion-badge>
+    </ion-item>
+
+  </ion-list>
 
 </ion-content>

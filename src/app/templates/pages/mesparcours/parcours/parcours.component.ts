@@ -35,6 +35,7 @@ export class ParcoursComponent implements OnInit, OnDestroy {
     const obs = this.parcoursService.recupererListeParcours(this.id);
     obs.subscribe(resp => {
       this.listeParcours = resp;
+      this.liste = resp;
       console.log(this.listeParcours);
 
     });
