@@ -9,31 +9,49 @@
             <label for="field-titre">nom :</label>
             <ion-input type="text" id="field-titre" name="parcours.nom" [(ngModel)]="parcoursDto.nom"></ion-input>
         </ion-item>
+
         <ion-item>
             <label for="field-description">Description :</label>
             <ion-input type="text-area" id="field-description" name="parcours.description"
                 [(ngModel)]="parcoursDto.description">
             </ion-input>
         </ion-item>
-        <ion-item>
-            <label for="field-adresseDepart">Adresse de départ :</label>
-            <ion-input type="text-area" id="field-adresseDepart" name="parcours.adresseDepart"
-                [(ngModel)]="parcoursDto.adresseDepart">
-            </ion-input>
-        </ion-item>
-        <ion-item>
-            <label for="field-adresseArrivee">Adresse d'arrivée :</label>
-            <ion-input type="text-area" id="field-adresseArrivee" name="parcours.adresseArrivee"
-                [(ngModel)]="parcoursDto.adresseArrivee">
-            </ion-input>
-        </ion-item>
+        <div class="autocomplete">
+            <ion-item>
+                <label for="field-adresseDepart">Adresse de départ :</label>
+
+                <ion-searchbar [(ngModel)]="parcoursDto.adresseDepart" (click)="show()" (ionChange)='geo($event)'
+                    [ngModelOptions]="{standalone: true}" id="field-adresseDepart" name="parcours.adresseDepart">
+                </ion-searchbar>
+            </ion-item>
+        </div>
+        <ion-list>
+            <ion-item *ngFor=" let res of addApi" (click)="addApiInput(res)" [hidden]="isShown">
+                {{res}}
+            </ion-item>
+        </ion-list>
+        <div class="autocomplete">
+            <ion-item>
+                <label for="field-adresseArrivee">Adresse d'arrivée :</label>
+
+                <ion-searchbar [(ngModel)]="parcoursDto.adresseArrivee" (click)="show2()" (ionChange)='geo2($event)'
+                    [ngModelOptions]="{standalone: true}" id="field-adresseArrivee" name="parcours.adresseArrivee">
+                </ion-searchbar>
+            </ion-item>
+        </div>
+        <ion-list>
+            <ion-item *ngFor=" let res1 of addApi2" (click)="addApiInput2(res1)" [hidden]="isShown2">
+                {{res1}}
+            </ion-item>
+        </ion-list>
         <ion-grid>
             <ion-row>
                 <ion-col>
                     <ion-button float-right size="default" type="reset" value="Reset" color="danger"
                         [routerLink]="['/groupe/afficher',id]">Annuler</ion-button>
                     <ion-button float-right size="default" type="submit" color="success"
-                        [routerLink]="['/groupe/afficher',id]">Ajouter</ion-button>
+                        [routerLink]="['/groupe/afficher',id]">
+                        Ajouter</ion-button>
 
                 </ion-col>
             </ion-row>

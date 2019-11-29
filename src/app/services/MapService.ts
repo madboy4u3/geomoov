@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { MapApiDto } from '../models/MapApiDto';
+import { MapApiDto, MapAdreseDto } from '../models/MapApiDto';
 import { Observable } from 'rxjs';
 import { FeatureCollection } from 'geojson';
 declare var google;
@@ -27,9 +27,9 @@ export class MapService {
              .subscribe(res => console.log(res));
      } */
 
-    getApiMap(add: string): Observable<MapApiDto> {
+    getApiMap(add: string): Observable<MapAdreseDto> {
 
-        const result = this.http.get<MapApiDto>(this.URL + add + this.autoComplete);
+        const result = this.http.get<MapAdreseDto>(this.URL + add + this.autoComplete);
         console.log(this.URL + 'add' + this.autoComplete);
         console.log(result);
         return result;

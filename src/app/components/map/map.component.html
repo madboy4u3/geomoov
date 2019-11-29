@@ -1,2 +1,18 @@
 <ion-button color="primary" (click)="buttonClick()">Primary</ion-button>
 <ion-button color="warning" (click)="geo()">Danger</ion-button>
+
+<h1>Search color</h1>
+
+
+
+<!--(ionFocus)="addFocus()" (ionInput)="search()" (ionBlur)="removeFocus() -->
+
+<div class="autocomplete">
+    <ion-searchbar [(ngModel)]="selectedAd" (click)="show()" (ionChange)='geo($event)'>
+    </ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor=" let res of addApi" (click)="addApiInput(res)" [hidden]="isShown">
+            {{res}}
+        </ion-item>
+    </ion-list>
+</div>

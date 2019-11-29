@@ -15,6 +15,9 @@ import { NativeGeocoderResult } from '@ionic-native/native-geocoder/ngx';
 export class PickupLocationPage {
   map: Map;
   newMarker: any;
+  sMarker: any;
+  bMarker: any;
+  oMarker: any;
   circle: any;
   address: string[];
 
@@ -25,12 +28,13 @@ export class PickupLocationPage {
   }
 
   loadMap() {
-    this.map = new Map('mapId').setView([17.385, 78.4867], 13);
+    this.map = new Map('mapId').setView([50.632850, 3.067270], 13);
     tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:
         'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
     }).addTo(this.map);
-
+    this.findAd();
+    this.locatePosition();
   }
 
   locatePosition() {
@@ -38,15 +42,25 @@ export class PickupLocationPage {
       this.newMarker = marker([e.latitude, e.longitude], {
         draggable: true
       }).addTo(this.map);
-      this.newMarker.bindPopup('Vous etes ici!').openPopup();
-      this.getAddress(e.latitude, e.longitude); // This line is added
+      this.sMarker = marker([50.632050, 3.067270], {
+        draggable: true
+      }).addTo(this.map);
+      this.bMarker = marker([50.632040, 3.067160], {
+        draggable: true
+      }).addTo(this.map);
+      this.oMarker = marker([50.632140, 3.067060], {
+        draggable: true
+      }).addTo(this.map);
+      this.newMarker.bindPopup('Vous etes ici!');
+      this.sMarker.bindPopup('Sondes!');
+      this.bMarker.bindPopup('Bouchra!');
+      this.oMarker.bindPopup('Otmane!');
+      //this.getAddress(e.latitude, e.longitude); // This line is added
 
-      this.newMarker.on('dragend', () => {
-        const position = this.newMarker.getLatLng();
-        this.getAddress(position.lat, position.lng); // This line is added
 
 
-      });
+
+
     });
 
   }
@@ -77,25 +91,14 @@ export class PickupLocationPage {
   }
   findAd() {
     this.map.locate({ setView: true }).on('locationfound', (e: any) => {
-      this.newMarker = marker([50.631930, 3.066840], {
-        draggable: false
-      }
-      ).addTo(this.map);
       this.circle = circle([50.631930, 3.066840], {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.2,
-        radius: 50
+        radius: 60
       }).addTo(this.map);
-      this.newMarker.bindPopup('Vous etes ici!').openPopup();
-      this.getAddress(e.latitude, e.longitude); // This line is added
-
-      this.newMarker.on('dragend', () => {
-        const position = this.newMarker.getLatLng();
-        this.getAddress(position.lat, position.lng);// This line is added
-
-
-      });
+      // this.newMarker.bindPopup('Vous etes ici!').openPopup();
+      //this.getAddress(e.latitude, e.longitude); // This line is add
     });
 
   }
