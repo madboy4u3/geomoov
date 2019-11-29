@@ -64,10 +64,10 @@ export class AffichergroupeComponent implements OnInit {
       this.listeProteges = resp;
     });
 
-    const obs5 = this.groupeService.deleteGroupe(this.id);
+    /*const obs5 = this.groupeService.deleteGroupe(this.id);
     obs5.subscribe(resp => {
       console.log(resp);
-    });
+    });*/
   }
 
   // tslint:disable-next-line: use-lifecycle-interface

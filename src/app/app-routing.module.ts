@@ -43,7 +43,7 @@ const routes: Routes = [
   { path: 'veilleur', component: InscriptionComponent },
   { path: 'page-accueil', loadChildren: './templates/pages/page-accueil/page-accueil.module#PageAccueilPageModule' },
   { path: 'accueil', component: PageAccueilPage },
-  { path: 'accueilProtege', component: CompteProtegeComponent },
+  { path: 'protege', component: CompteProtegeComponent },
 
 
 ];

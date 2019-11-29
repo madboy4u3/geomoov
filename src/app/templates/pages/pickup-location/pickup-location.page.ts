@@ -28,7 +28,7 @@ export class PickupLocationPage {
   }
 
   loadMap() {
-    this.map = new Map('mapId').setView([50.632850, 3.067270], 13);
+    this.map = new Map('mapId').setView([50.632850, 3.067270], 8);
     tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:
         'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
@@ -39,7 +39,7 @@ export class PickupLocationPage {
 
   locatePosition() {
     this.map.locate({ setView: true }).on('locationfound', (e: any) => {
-      this.newMarker = marker([e.latitude, e.longitude], {
+      this.newMarker = marker([50.632850, 3.067270], {
         draggable: true
       }).addTo(this.map);
       this.sMarker = marker([50.632050, 3.067270], {

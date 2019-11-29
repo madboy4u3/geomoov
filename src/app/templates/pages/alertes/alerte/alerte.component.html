@@ -14,7 +14,7 @@
       <ion-item *ngFor="let valeur of listeAlertes">
 
         <ion-item>
-          <div class="dto">{{valeur._protegeName}} : {{valeur._message}}</div>
+          <div class="dto">{{valeur._protegeName | uppercase }} : {{valeur._message}}</div>
         </ion-item>
 
 
