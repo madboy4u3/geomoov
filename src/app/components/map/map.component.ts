@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Injectable, NgZone } from '@angular/core';
-import { AlertController, NavController } from '@ionic/angular';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { MapService } from 'src/app/services/MapService';
 import { MapApiDto } from 'src/app/models/MapApiDto';
-import { FeatureCollection } from 'geojson';
+
 
 @Component({
   selector: 'app-map',
@@ -11,26 +9,49 @@ import { FeatureCollection } from 'geojson';
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnInit {
+
   adresse: MapApiDto;
   add: string;
+  isShown = true;
+  selectedAd = '';
+  protected searchStr: string;
+  protected captain: string;
+  private searchData: MapApiDto[] = [];
+
+  addApi: string[] = [];
+
   constructor(
-    private alertCtrl: AlertController,
-    private zone: NgZone,
-    private navCtrl: NavController,
-    private MapApi: MapService,
+    private MapApi: MapService
   ) {
+  }
+
+
+  ngOnInit() {
 
   }
 
-  ngOnInit() { }
+  geo(event: any) {
 
-  geo() {
-    const obs4 = this.MapApi.getApiMap(this.add = '80 rue de la digue valenciennes 59300');
+    const obs4 = this.MapApi.getApiMap(this.add = event.target.value);
+    console.log(this.add);
     obs4.subscribe(resp => {
       this.adresse = resp;
-      console.log(this.adresse.features);
+      this.addApi = [];
+      this.searchData = this.adresse.features;
+      //this.adresse.features.forEach(v => console.log(v.properties.label));
+      this.adresse.features.forEach(v => this.addApi.push(v.properties.label));
+      //this.adresse.features.forEach(v => console.log(v.geometry.coordinates));
     });
   }
 
+  addApiInput(res) {
+    console.log(res);
+    this.isShown = true;
+    this.selectedAd = res;
 
+  }
+
+  show() {
+    this.isShown = !this.isShown;
+  }
 }

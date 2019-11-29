@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { GroupesComponent } from './templates/pages/groupe/groupes/groupes.component';
 import { FormGroupeComponent } from './components/form-groupe/form-groupe.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AjoutergroupeComponent } from './templates/pages/groupe/ajoutergroupe/ajoutergroupe.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from './helpers/MessageService';
@@ -33,16 +33,32 @@ import { AlerteComponent } from './templates/pages/alertes/alerte/alerte.compone
 import { AfficherAlerteComponent } from './templates/pages/alertes/afficher-alerte/afficher-alerte.component';
 import { AfficherMapComponent } from './templates/pages/map/afficher-map/afficher-map.component';
 import { MapComponent } from './components/map/map.component';
+import { MaterialModule } from './components/map/material-module';
+import { } from '@angular/material/autocomplete';
+import { CommonModule } from '@angular/common';
+import { TagInputModule } from 'ngx-chips';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatRadioModule, MatAutocompleteModule } from '@angular/material';
 @NgModule({
   declarations: [AppComponent, GroupesComponent, FormGroupeComponent, AjoutergroupeComponent, MenuComponent, ProtegesComponent,
     FormProtegeComponent, FormParcoursComponent, AjouterParcoursComponent, ParcoursComponent, AffichergroupeComponent, InscriptionComponent,
     FormInscriptionComponent, PageAccueilPage, InscriptionComponent, AjouterprotegeComponent,
     CompteProtegeComponent, AlerteComponent, AfficherAlerteComponent, AfficherMapComponent, MapComponent],
   entryComponents: [HomePage],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpClientModule, HomePageModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, HomePageModule,
+    TagInputModule,
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatRadioModule,
+    FormsModule,
+    MaterialModule,
+    ReactiveFormsModule],
   providers: [
     Geolocation,
     StatusBar,
+
+    CommonModule,
+
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     NativeGeocoder,
